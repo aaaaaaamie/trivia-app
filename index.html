@@ -482,262 +482,1918 @@
         let currentFilter = 'all';
 
         const triviaData = {
-            rounds: [
-                {
-                    roundNumber: 1,
-                    questions: [
-                        { category: "科学", q_cn: "量子力学的奠基人之一,提出\"测不准原理\"的科学家是谁?", q_en: "Who is one of the founders of quantum mechanics who proposed the 'Uncertainty Principle'?", a_cn: "海森堡", a_en: "Heisenberg" },
-                        { category: "音乐", q_cn: "周杰伦的歌曲《青花瓷》中,\"天青色等烟雨\"的下一句是什么?", q_en: "In Jay Chou's song 'Blue and White Porcelain', what is the next line after 'Azure awaits the misty rain'?", a_cn: "而我在等你", a_en: "And I am waiting for you" },
-                        { category: "娱乐", q_cn: "电影《大话西游》中,紫霞仙子看到变成孙悟空的至尊宝时说的经典台词是什么?", q_en: "In the movie 'A Chinese Odyssey', what is the classic line Zixia Fairy says when she sees Zhizunbao transformed into Sun Wukong?", a_cn: "He looks like a dog(他好像一条狗)", a_en: "He looks like a dog" },
-                        { category: "常识", q_cn: "一年有四个季节,分别是什么?", q_en: "What are the four seasons in a year?", a_cn: "春、夏、秋、冬", a_en: "Spring, Summer, Autumn, Winter" },
-                        { category: "地理", q_cn: "世界上国土面积最大的国家是?", q_en: "Which country has the largest land area in the world?", a_cn: "俄罗斯", a_en: "Russia" },
-                        { category: "文学", q_cn: "金庸笔下\"东邪西毒南帝北丐中神通\"中的\"中神通\"是指谁?", q_en: "In Jin Yong's novels, who is the 'Central Divine' in 'Eastern Heretic, Western Venom, Southern Emperor, Northern Beggar, Central Divine'?", a_cn: "王重阳", a_en: "Wang Chongyang" },
-                        { category: "科学", q_cn: "DNA双螺旋结构是由哪两位科学家发现的?", q_en: "Which two scientists discovered the DNA double helix structure?", a_cn: "沃森和克里克", a_en: "Watson and Crick" },
-                        { category: "娱乐", q_cn: "香港电影《无间道》中,刘德华饰演的角色叫什么名字?", q_en: "What is the name of Andy Lau's character in the Hong Kong film 'Infernal Affairs'?", a_cn: "刘建明", a_en: "Lau Kin-ming" },
-                        { category: "常识", q_cn: "一周有多少天?", q_en: "How many days are in a week?", a_cn: "7天", a_en: "7 days" },
-                        { category: "体育", q_cn: "NBA历史上总得分最高的球员是谁?(截至2023年)", q_en: "Who is the all-time leading scorer in NBA history? (As of 2023)", a_cn: "勒布朗·詹姆斯", a_en: "LeBron James" },
-                        { category: "音乐", q_cn: "Beyond乐队的主唱黄家驹在哪一年去世?", q_en: "In what year did Beyond's lead singer Wong Ka Kui pass away?", a_cn: "1993年", a_en: "1993" },
-                        { category: "地理", q_cn: "世界上人口最多的国家是?(截至2023年)", q_en: "Which country has the largest population in the world? (As of 2023)", a_cn: "印度", a_en: "India" },
-                        { category: "娱乐", q_cn: "香港\"四大天王\"是指哪四位歌手?(说出其中一位)", q_en: "Who are Hong Kong's 'Four Heavenly Kings'? (Name one)", a_cn: "刘德华、张学友、郭富城、黎明", a_en: "Andy Lau, Jacky Cheung, Aaron Kwok, Leon Lai" },
-                        { category: "科学", q_cn: "元素周期表是由哪位科学家提出的?", q_en: "Which scientist proposed the periodic table of elements?", a_cn: "门捷列夫", a_en: "Mendeleev" },
-                        { category: "常识", q_cn: "\"红绿灯\"中,红灯表示什么?", q_en: "In traffic lights, what does a red light mean?", a_cn: "停止", a_en: "Stop" }
-                    ]
-                },
-                {
-                    roundNumber: 2,
-                    questions: [
-                        { category: "文学", q_cn: "鲁迅的《狂人日记》最早发表在哪本杂志上?", q_en: "In which magazine was Lu Xun's 'Diary of a Madman' first published?", a_cn: "《新青年》", a_en: "New Youth" },
-                        { category: "科学", q_cn: "相对论是由哪位科学家提出的?", q_en: "Which scientist proposed the theory of relativity?", a_cn: "爱因斯坦", a_en: "Einstein" },
-                        { category: "娱乐", q_cn: "王家卫导演的电影《花样年华》的男女主角分别是谁?", q_en: "Who are the male and female leads in Wong Kar-wai's film 'In the Mood for Love'?", a_cn: "梁朝伟和张曼玉", a_en: "Tony Leung and Maggie Cheung" },
-                        { category: "常识", q_cn: "手机充电时应该使用什么类型的电源?", q_en: "What type of power source should be used when charging a mobile phone?", a_cn: "符合手机规格的充电器/电源适配器", a_en: "Charger/power adapter that meets phone specifications" },
-                        { category: "地理", q_cn: "世界上最长的河流是?", q_en: "What is the longest river in the world?", a_cn: "尼罗河", a_en: "Nile River" },
-                        { category: "音乐", q_cn: "陈奕迅的经典歌曲《十年》是由谁作词的?", q_en: "Who wrote the lyrics for Eason Chan's classic song 'Ten Years'?", a_cn: "林夕", a_en: "Albert Leung (Lin Xi)" },
-                        { category: "科学", q_cn: "光在真空中的速度约为每秒多少公里?", q_en: "What is the approximate speed of light in a vacuum per second?", a_cn: "30万公里", a_en: "300,000 kilometers" },
-                        { category: "常识", q_cn: "\"24小时\"等于多少分钟?", q_en: "How many minutes are in 24 hours?", a_cn: "1440分钟", a_en: "1440 minutes" },
-                        { category: "体育", q_cn: "刘翔在2004年雅典奥运会上夺冠的项目是?", q_en: "What event did Liu Xiang win at the 2004 Athens Olympics?", a_cn: "110米栏", a_en: "110m hurdles" },
-                        { category: "娱乐", q_cn: "周星驰电影《功夫》中,斧头帮帮主叫什么名字?", q_en: "What is the name of the Axe Gang leader in Stephen Chow's film 'Kung Fu Hustle'?", a_cn: "琛哥", a_en: "Brother Sum" },
-                        { category: "地理", q_cn: "中国最长的河流是?", q_en: "What is the longest river in China?", a_cn: "长江", a_en: "Yangtze River" },
-                        { category: "音乐", q_cn: "Beyond的经典歌曲《光辉岁月》是为了致敬哪位人物?", q_en: "Which person is Beyond's classic song 'Glory Days' a tribute to?", a_cn: "曼德拉", a_en: "Nelson Mandela" },
-                        { category: "文学", q_cn: "《三国演义》的作者是谁?", q_en: "Who is the author of 'Romance of the Three Kingdoms'?", a_cn: "罗贯中", a_en: "Luo Guanzhong" },
-                        { category: "常识", q_cn: "\"CPU\"是电脑的什么部件?", q_en: "What computer component is a 'CPU'?", a_cn: "中央处理器/处理器", a_en: "Central Processing Unit/Processor" },
-                        { category: "科学", q_cn: "人体最大的器官是什么?", q_en: "What is the largest organ in the human body?", a_cn: "皮肤", a_en: "Skin" }
-                    ]
-                },
-                {
-                    roundNumber: 3,
-                    questions: [
-                        { category: "娱乐", q_cn: "李小龙的经典电影《精武门》中,他饰演的角色叫什么名字?", q_en: "What is the name of Bruce Lee's character in his classic film 'Fist of Fury'?", a_cn: "陈真", a_en: "Chen Zhen" },
-                        { category: "常识", q_cn: "\"微信\"是哪家公司开发的?", q_en: "Which company developed 'WeChat'?", a_cn: "腾讯", a_en: "Tencent" },
-                        { category: "地理", q_cn: "世界上面积最大的沙漠是?", q_en: "What is the largest desert in the world?", a_cn: "撒哈拉沙漠", a_en: "Sahara Desert" },
-                        { category: "科学", q_cn: "牛顿发现的万有引力定律是因为看到什么掉落?", q_en: "What did Newton see falling that led to his discovery of the law of universal gravitation?", a_cn: "苹果", a_en: "Apple" },
-                        { category: "音乐", q_cn: "香港歌手张学友被称为什么?", q_en: "What is Hong Kong singer Jacky Cheung known as?", a_cn: "歌神", a_en: "God of Songs" },
-                        { category: "文学", q_cn: "\"床前明月光,疑是地上霜\"是谁的诗?", q_en: "Who wrote the poem 'Bright moonlight before my bed, I thought it was frost on the ground'?", a_cn: "李白", a_en: "Li Bai" },
-                        { category: "体育", q_cn: "足球比赛中,每队上场有多少名球员?", q_en: "How many players are on the field for each team in a soccer match?", a_cn: "11人", a_en: "11 players" },
-                        { category: "娱乐", q_cn: "TVB经典剧集《创世纪》的主演是谁?(说出其中一位)", q_en: "Who are the main actors in the classic TVB series 'At the Threshold of an Era'? (Name one)", a_cn: "罗嘉良、郭晋安、陈锦鸿、古天乐", a_en: "Gallen Lo, Kwok Fung, Benny Chan, Louis Koo" },
-                        { category: "常识", q_cn: "一年有多少个月?", q_en: "How many months are in a year?", a_cn: "12个月", a_en: "12 months" },
-                        { category: "地理", q_cn: "中国的首都是哪里?", q_en: "What is the capital of China?", a_cn: "北京", a_en: "Beijing" },
-                        { category: "科学", q_cn: "地球绕太阳转一圈需要多长时间?", q_en: "How long does it take for Earth to orbit the Sun once?", a_cn: "一年(365天)", a_en: "One year (365 days)" },
-                        { category: "音乐", q_cn: "张学友的经典歌曲《吻别》是谁作词的?", q_en: "Who wrote the lyrics for Jacky Cheung's classic song 'Kiss Goodbye'?", a_cn: "何启弘", a_en: "He Qihong" },
-                        { category: "娱乐", q_cn: "成龙的《警察故事》系列电影中,他饰演的警察叫什么名字?", q_en: "What is the name of the police officer Jackie Chan plays in the 'Police Story' series?", a_cn: "陈家驹", a_en: "Chan Ka-kui" },
-                        { category: "常识", q_cn: "\"双十一\"是哪个电商平台创造的购物节?", q_en: "Which e-commerce platform created the 'Double 11' shopping festival?", a_cn: "淘宝/阿里巴巴", a_en: "Taobao/Alibaba" },
-                        { category: "科学", q_cn: "水在多少摄氏度会结冰?", q_en: "At what temperature does water freeze?", a_cn: "0℃", a_en: "0°C" }
-                    ]
-                },
-                {
-                    roundNumber: 4,
-                    questions: [
-                        { category: "文学", q_cn: "金庸的武侠小说中,\"飞雪连天射白鹿\"指的是哪些作品?(说出其中一部)", q_en: "In Jin Yong's martial arts novels, what works does 'Flying Snow Shooting White Deer' refer to? (Name one)", a_cn: "《飞狐外传》《雪山飞狐》《连城诀》《天龙八部》《射雕英雄传》《白马啸西风》《鹿鼎记》等", a_en: "Fox Volant, Snow Mountain Flying Fox, Ode to Gallantry, Demi-Gods, Condor Heroes, White Horse, Duke of Mount Deer, etc." },
-                        { category: "音乐", q_cn: "邓丽君是哪里人?", q_en: "Where is Teresa Teng from?", a_cn: "台湾", a_en: "Taiwan" },
-                        { category: "娱乐", q_cn: "周星驰在电影《少林足球》中饰演的角色叫什么名字?", q_en: "What is Stephen Chow's character name in 'Shaolin Soccer'?", a_cn: "五师兄/阿星", a_en: "Fifth Brother/Sing" },
-                        { category: "常识", q_cn: "\"身份证\"号码有多少位数字?", q_en: "How many digits are in a Chinese ID card number?", a_cn: "18位", a_en: "18 digits" },
-                        { category: "地理", q_cn: "日本的首都是哪里?", q_en: "What is the capital of Japan?", a_cn: "东京", a_en: "Tokyo" },
-                        { category: "科学", q_cn: "哪种动物被称为\"沙漠之舟\"?", q_en: "Which animal is called the 'ship of the desert'?", a_cn: "骆驼", a_en: "Camel" },
-                        { category: "体育", q_cn: "奥运会每隔几年举办一次?", q_en: "How often are the Olympics held?", a_cn: "4年", a_en: "Every 4 years" },
-                        { category: "娱乐", q_cn: "周润发、狄龙、张国荣主演的经典黑帮电影是什么?", q_en: "What is the classic gangster film starring Chow Yun-fat, Ti Lung, and Leslie Cheung?", a_cn: "《英雄本色》", a_en: "A Better Tomorrow" },
-                        { category: "常识", q_cn: "\"110\"是什么电话号码?", q_en: "What is the '110' phone number for?", a_cn: "报警电话", a_en: "Police emergency" },
-                        { category: "音乐", q_cn: "刘德华的经典歌曲《忘情水》是在哪一年发行的?", q_en: "In what year was Andy Lau's classic song 'Forget Love Potion' released?", a_cn: "1994年", a_en: "1994" },
-                        { category: "科学", q_cn: "人类的正常体温约为多少摄氏度?", q_en: "What is the normal human body temperature in Celsius?", a_cn: "36-37℃(37℃左右)", a_en: "36-37°C (around 37°C)" },
-                        { category: "地理", q_cn: "地球上最大的海洋是哪个?", q_en: "What is the largest ocean on Earth?", a_cn: "太平洋", a_en: "Pacific Ocean" },
-                        { category: "文学", q_cn: "《红楼梦》的作者是谁?", q_en: "Who is the author of 'Dream of the Red Chamber'?", a_cn: "曹雪芹", a_en: "Cao Xueqin" },
-                        { category: "娱乐", q_cn: "香港电影金像奖的奖杯形状是什么?", q_en: "What is the shape of the Hong Kong Film Awards trophy?", a_cn: "人形(举起双手的人)", a_en: "Human figure (person with raised arms)" },
-                        { category: "常识", q_cn: "\"WiFi\"的中文名称是什么?", q_en: "What is the Chinese name for 'WiFi'?", a_cn: "无线网络/无线局域网", a_en: "Wireless network/Wireless LAN" }
-                    ]
-                },
-                {
-                    roundNumber: 5,
-                    questions: [
-                        { category: "科学", q_cn: "发明电灯泡的科学家是谁?", q_en: "Who invented the light bulb?", a_cn: "爱迪生", a_en: "Edison" },
-                        { category: "娱乐", q_cn: "香港导演王家卫的经典电影《重庆森林》的主演是谁?(说出其中一位)", q_en: "Who are the leads in Wong Kar-wai's classic film 'Chungking Express'? (Name one)", a_cn: "梁朝伟、王菲、金城武、林青霞", a_en: "Tony Leung, Faye Wong, Takeshi Kaneshiro, Brigitte Lin" },
-                        { category: "音乐", q_cn: "张国荣的经典歌曲《Monica》是翻唱自哪个国家的歌?", q_en: "Which country is Leslie Cheung's classic song 'Monica' covered from?", a_cn: "日本", a_en: "Japan" },
-                        { category: "常识", q_cn: "\"支付宝\"是哪家公司的产品?", q_en: "Which company's product is 'Alipay'?", a_cn: "阿里巴巴/蚂蚁集团", a_en: "Alibaba/Ant Group" },
-                        { category: "地理", q_cn: "法国的首都是哪里?", q_en: "What is the capital of France?", a_cn: "巴黎", a_en: "Paris" },
-                        { category: "体育", q_cn: "姚明效力过NBA的哪支球队?", q_en: "Which NBA team did Yao Ming play for?", a_cn: "火箭队(休斯顿火箭)", a_en: "Houston Rockets" },
-                        { category: "文学", q_cn: "\"生存还是毁灭,这是一个问题\"出自莎士比亚的哪部作品?", q_en: "Which Shakespeare work contains 'To be or not to be, that is the question'?", a_cn: "《哈姆雷特》", a_en: "Hamlet" },
-                        { category: "娱乐", q_cn: "《喜剧之王》中周星驰饰演的角色梦想是什么?", q_en: "What is Stephen Chow's character's dream in 'King of Comedy'?", a_cn: "当演员", a_en: "To be an actor" },
-                        { category: "科学", q_cn: "彩虹有几种颜色?", q_en: "How many colors are in a rainbow?", a_cn: "7种(红橙黄绿青蓝紫)", a_en: "7 colors (red, orange, yellow, green, cyan, blue, purple)" },
-                        { category: "常识", q_cn: "\"淘宝\"属于什么类型的网站?", q_en: "What type of website is 'Taobao'?", a_cn: "电商/购物网站", a_en: "E-commerce/shopping website" },
-                        { category: "音乐", q_cn: "\"海阔天空\"是哪个乐队的歌?", q_en: "Which band sings 'Boundless Oceans, Vast Skies'?", a_cn: "Beyond", a_en: "Beyond" },
-                        { category: "地理", q_cn: "世界上最高的山峰是什么?", q_en: "What is the highest mountain in the world?", a_cn: "珠穆朗玛峰", a_en: "Mount Everest" },
-                        { category: "娱乐", q_cn: "梅艳芳的经典歌曲《似水流年》是哪部电影的主题曲?", q_en: "Which film is Anita Mui's classic song 'Love Like the Flowing Stream' the theme for?", a_cn: "《似水流年》(同名电影)", a_en: "Homecoming (same-titled film)" },
-                        { category: "科学", q_cn: "声音在真空中能传播吗?", q_en: "Can sound travel in a vacuum?", a_cn: "不能", a_en: "No" },
-                        { category: "文学", q_cn: "\"人生自古谁无死,留取丹心照汗青\"是谁写的?", q_en: "Who wrote 'Since ancient times, none can escape death, let my loyal heart illuminate history'?", a_cn: "文天祥", a_en: "Wen Tianxiang" }
-                    ]
-                },
-                {
-                    roundNumber: 6,
-                    questions: [
-                        { category: "常识", q_cn: "\"双十二\"购物节在每年的哪一天?", q_en: "On which day is the 'Double 12' shopping festival each year?", a_cn: "12月12日", a_en: "December 12" },
-                        { category: "娱乐", q_cn: "李安导演的电影《卧虎藏龙》获得了奥斯卡哪个奖项?", q_en: "Which Oscar award did Ang Lee's 'Crouching Tiger, Hidden Dragon' win?", a_cn: "最佳外语片", a_en: "Best Foreign Language Film" },
-                        { category: "科学", q_cn: "月球绕地球转一圈需要多长时间?", q_en: "How long does it take for the Moon to orbit Earth once?", a_cn: "约一个月(27-29天)", a_en: "About one month (27-29 days)" },
-                        { category: "音乐", q_cn: "黎明、郭富城、刘德华、张学友中,谁最后一个加入\"四大天王\"?", q_en: "Among Leon Lai, Aaron Kwok, Andy Lau, and Jacky Cheung, who was the last to join the 'Four Heavenly Kings'?", a_cn: "郭富城", a_en: "Aaron Kwok" },
-                        { category: "地理", q_cn: "澳大利亚的首都是哪里?", q_en: "What is the capital of Australia?", a_cn: "堪培拉", a_en: "Canberra" },
-                        { category: "文学", q_cn: "《水浒传》中有多少位好汉?", q_en: "How many heroes are in 'Water Margin'?", a_cn: "108位", a_en: "108" },
-                        { category: "体育", q_cn: "中国第一个获得奥运会金牌的运动员是谁?", q_en: "Who was China's first Olympic gold medalist?", a_cn: "许海峰", a_en: "Xu Haifeng" },
-                        { category: "娱乐", q_cn: "林青霞在《东方不败》中饰演的角色是谁?", q_en: "Who does Brigitte Lin play in 'Swordsman II'?", a_cn: "东方不败", a_en: "Asia the Invincible" },
-                        { category: "常识", q_cn: "\"二维码\"用手机什么功能可以扫描?", q_en: "What phone function is used to scan QR codes?", a_cn: "相机/扫一扫", a_en: "Camera/Scanner" },
-                        { category: "科学", q_cn: "一年有多少天?(平年)", q_en: "How many days in a year? (non-leap year)", a_cn: "365天", a_en: "365 days" },
-                        { category: "音乐", q_cn: "\"月亮代表我的心\"是谁的经典歌曲?", q_en: "Whose classic song is 'The Moon Represents My Heart'?", a_cn: "邓丽君", a_en: "Teresa Teng" },
-                        { category: "地理", q_cn: "埃及的首都是哪里?", q_en: "What is the capital of Egypt?", a_cn: "开罗", a_en: "Cairo" },
-                        { category: "娱乐", q_cn: "周星驰的电影《国产凌凌漆》是恶搞哪个系列电影?", q_en: "Which film series does Stephen Chow's 'From Beijing with Love' parody?", a_cn: "007(占士邦/詹姆斯·邦德)", a_en: "007 (James Bond)" },
-                        { category: "文学", q_cn: "\"天生我材必有用\"出自李白的哪首诗?", q_en: "Which Li Bai poem contains 'Heaven has made us talents, we're not made in vain'?", a_cn: "《将进酒》", a_en: "Invitation to Wine" },
-                        { category: "常识", q_cn: "\"高铁\"的全称是什么?", q_en: "What is the full name of '高铁' (Gaotie)?", a_cn: "高速铁路", a_en: "High-speed railway" }
-                    ]
-                },
-                {
-                    roundNumber: 7,
-                    questions: [
-                        { category: "科学", q_cn: "太阳系中最大的行星是哪颗?", q_en: "What is the largest planet in the solar system?", a_cn: "木星", a_en: "Jupiter" },
-                        { category: "娱乐", q_cn: "吴宇森导演的《英雄本色》中,周润发饰演的小马哥最经典的动作是什么?", q_en: "What is Mark's (Chow Yun-fat) most iconic action in John Woo's 'A Better Tomorrow'?", a_cn: "双枪", a_en: "Dual pistols" },
-                        { category: "音乐", q_cn: "\"听妈妈的话\"是周杰伦哪张专辑的歌?", q_en: "Which Jay Chou album is 'Listen to Mom' from?", a_cn: "《依然范特西》", a_en: "Still Fantasy" },
-                        { category: "常识", q_cn: "\"快递\"包裹上的条形码主要用于什么?", q_en: "What is the barcode on express packages mainly used for?", a_cn: "追踪/识别包裹", a_en: "Tracking/identifying packages" },
-                        { category: "地理", q_cn: "威尼斯是哪个国家的城市?", q_en: "Which country is Venice in?", a_cn: "意大利", a_en: "Italy" },
-                        { category: "文学", q_cn: "\"春眠不觉晓,处处闻啼鸟\"是谁的诗?", q_en: "Who wrote 'In spring one sleeps, unaware of dawn, everywhere one hears birds'?", a_cn: "孟浩然", a_en: "Meng Haoran" },
-                        { category: "体育", q_cn: "篮球比赛中,三分线外投篮命中得几分?", q_en: "How many points is a shot made from beyond the three-point line in basketball?", a_cn: "3分", a_en: "3 points" },
-                        { category: "娱乐", q_cn: "《唐伯虎点秋香》中,秋香是谁饰演的?", q_en: "Who plays Qiu Xiang in 'Flirting Scholar'?", a_cn: "巩俐", a_en: "Gong Li" },
-                        { category: "科学", q_cn: "钻石是由哪种元素组成的?", q_en: "What element are diamonds made of?", a_cn: "碳", a_en: "Carbon" },
-                        { category: "常识", q_cn: "\"5G\"中的\"G\"代表什么?", q_en: "What does the 'G' in '5G' stand for?", a_cn: "Generation(代/世代)", a_en: "Generation" },
-                        { category: "音乐", q_cn: "\"甜蜜蜜\"是谁的经典歌曲?", q_en: "Whose classic song is 'Sweet Honey'?", a_cn: "邓丽君", a_en: "Teresa Teng" },
-                        { category: "地理", q_cn: "韩国的首都是哪里?", q_en: "What is the capital of South Korea?", a_cn: "首尔", a_en: "Seoul" },
-                        { category: "娱乐", q_cn: "《霸王别姬》的男主角是谁?", q_en: "Who are the male leads in 'Farewell My Concubine'?", a_cn: "张国荣和张丰毅", a_en: "Leslie Cheung and Zhang Fengyi" },
-                        { category: "文学", q_cn: "《西游记》的作者是谁?", q_en: "Who is the author of 'Journey to the West'?", a_cn: "吴承恩", a_en: "Wu Cheng'en" },
-                        { category: "科学", q_cn: "血液循环系统中,负责输送氧气的是哪种细胞?", q_en: "Which cells carry oxygen in the circulatory system?", a_cn: "红细胞(红血球)", a_en: "Red blood cells" }
-                    ]
-                },
-                {
-                    roundNumber: 8,
-                    questions: [
-                        { category: "常识", q_cn: "\"外卖\"App中,\"美团\"的logo是什么颜色?", q_en: "What color is Meituan's logo in the food delivery app?", a_cn: "黄色", a_en: "Yellow" },
-                        { category: "娱乐", q_cn: "TVB电视剧《溏心风暴》中,\"唐至安\"是由谁饰演的?", q_en: "Who plays 'Tong Chi On' in TVB's 'Heart of Greed'?", a_cn: "夏雨", a_en: "Ha Yu" },
-                        { category: "科学", q_cn: "电脑中的\"CPU\"是指什么?", q_en: "What does 'CPU' in a computer stand for?", a_cn: "中央处理器", a_en: "Central Processing Unit" },
-                        { category: "音乐", q_cn: "\"七里香\"是周杰伦哪一年发行的专辑?", q_en: "In what year was Jay Chou's album 'Common Jasmin Orange' released?", a_cn: "2004年", a_en: "2004" },
-                        { category: "地理", q_cn: "泰国的首都是哪里?", q_en: "What is the capital of Thailand?", a_cn: "曼谷", a_en: "Bangkok" },
-                        { category: "文学", q_cn: "\"两个黄鹂鸣翠柳,一行白鹭上青天\"是谁的诗?", q_en: "Who wrote 'Two golden orioles sing in the green willows, a line of egrets fly into the blue sky'?", a_cn: "杜甫", a_en: "Du Fu" },
-                        { category: "体育", q_cn: "羽毛球比赛中,标准球场是双打还是单打场地更宽?", q_en: "In badminton, is the doubles or singles court wider?", a_cn: "双打", a_en: "Doubles" },
-                        { category: "娱乐", q_cn: "香港喜剧电影《家有喜事》的三兄弟分别由谁饰演?(说出其中一位)", q_en: "Who plays the three brothers in Hong Kong comedy 'All's Well, Ends Well'? (Name one)", a_cn: "周星驰、张国荣、黄百鸣", a_en: "Stephen Chow, Leslie Cheung, Raymond Wong" },
-                        { category: "科学", q_cn: "企鹅生活在南极还是北极?", q_en: "Do penguins live in Antarctica or the Arctic?", a_cn: "南极", a_en: "Antarctica" },
-                        { category: "常识", q_cn: "\"滴滴\"是什么类型的App?", q_en: "What type of app is 'Didi'?", a_cn: "打车/出行软件", a_en: "Ride-hailing/transportation app" },
-                        { category: "音乐", q_cn: "\"稻香\"这首歌是周杰伦写给谁的?", q_en: "Who did Jay Chou write 'Rice Field' for?", a_cn: "写给大家的励志歌曲", a_en: "An inspirational song for everyone" },
-                        { category: "地理", q_cn: "世界上最小的国家是?", q_en: "What is the smallest country in the world?", a_cn: "梵蒂冈", a_en: "Vatican City" },
-                        { category: "娱乐", q_cn: "杜琪峰导演的《PTU》中的PTU是指什么?", q_en: "What does PTU stand for in Johnnie To's 'PTU'?", a_cn: "机动部队(Police Tactical Unit)", a_en: "Police Tactical Unit" },
-                        { category: "文学", q_cn: "\"但愿人长久,千里共婵娟\"是谁写的?", q_en: "Who wrote 'May we all be blessed with longevity, sharing the beauty of the moon together across a thousand miles'?", a_cn: "苏轼", a_en: "Su Shi" },
-                        { category: "科学", q_cn: "世界上最大的陆地动物是什么?", q_en: "What is the largest land animal in the world?", a_cn: "非洲象", a_en: "African elephant" }
-                    ]
-                },
-                {
-                    roundNumber: 9,
-                    questions: [
-                        { category: "娱乐", q_cn: "《倩女幽魂》中,张国荣饰演的角色叫什么?", q_en: "What is Leslie Cheung's character name in 'A Chinese Ghost Story'?", a_cn: "宁采臣", a_en: "Ning Caichen" },
-                        { category: "常识", q_cn: "\"抖音\"是哪家公司开发的?", q_en: "Which company developed 'Douyin' (TikTok)?", a_cn: "字节跳动", a_en: "ByteDance" },
-                        { category: "科学", q_cn: "一天有多少小时?", q_en: "How many hours are in a day?", a_cn: "24小时", a_en: "24 hours" },
-                        { category: "音乐", q_cn: "梅艳芳被称为香港\"什么\"?", q_en: "What is Anita Mui known as in Hong Kong?", a_cn: "乐坛大姐大/舞台女皇", a_en: "Sister of Music/Queen of Stage" },
-                        { category: "地理", q_cn: "印度的首都是哪里?", q_en: "What is the capital of India?", a_cn: "新德里", a_en: "New Delhi" },
-                        { category: "文学", q_cn: "\"四大名著\"指的是哪四部?(说出其中一部)", q_en: "What are the 'Four Great Classical Novels'? (Name one)", a_cn: "《红楼梦》《西游记》《水浒传》《三国演义》", a_en: "Dream of Red Chamber, Journey to the West, Water Margin, Romance of Three Kingdoms" },
-                        { category: "体育", q_cn: "乒乓球是中国的国球,对还是错?", q_en: "Is table tennis China's national sport? True or false?", a_cn: "对", a_en: "True" },
-                        { category: "娱乐", q_cn: "《赌神》中,周润发饰演的赌神叫什么名字?", q_en: "What is Chow Yun-fat's character name in 'God of Gamblers'?", a_cn: "高进", a_en: "Ko Chun" },
-                        { category: "科学", q_cn: "闪电和雷声,哪个先发生?", q_en: "Which happens first, lightning or thunder?", a_cn: "同时发生(但光速比声速快,所以先看到闪电)", a_en: "Simultaneous (but light travels faster than sound, so we see lightning first)" },
-                        { category: "常识", q_cn: "\"快手\"是什么类型的App?", q_en: "What type of app is 'Kuaishou'?", a_cn: "短视频/社交软件", a_en: "Short video/social media app" },
-                        { category: "音乐", q_cn: "\"菊花台\"是周杰伦为哪部电影创作的主题曲?", q_en: "Which film is Jay Chou's 'Chrysanthemum Terrace' the theme song for?", a_cn: "《满城尽带黄金甲》", a_en: "Curse of the Golden Flower" },
-                        { category: "地理", q_cn: "巴西的首都是哪里?", q_en: "What is the capital of Brazil?", a_cn: "巴西利亚", a_en: "Brasília" },
-                        { category: "娱乐", q_cn: "《哈利·波特》系列电影中,哈利的死对头叫什么?", q_en: "What is Harry's nemesis called in the 'Harry Potter' series?", a_cn: "伏地魔", a_en: "Voldemort" },
-                        { category: "文学", q_cn: "\"千山鸟飞绝,万径人踪灭\"出自哪首诗?", q_en: "Which poem contains 'Birds vanish from a thousand hills, human traces erased from ten thousand paths'?", a_cn: "《江雪》(柳宗元)", a_en: "River Snow (by Liu Zongyuan)" },
-                        { category: "科学", q_cn: "人类有多少颗牙齿?(成年人)", q_en: "How many teeth do humans have? (Adults)", a_cn: "32颗", a_en: "32 teeth" }
-                    ]
-                },
-                {
-                    roundNumber: 10,
-                    questions: [
-                        { category: "常识", q_cn: "\"红包\"功能最早是哪个App推出的?", q_en: "Which app first introduced the 'red envelope' feature?", a_cn: "微信", a_en: "WeChat" },
-                        { category: "娱乐", q_cn: "王祖贤在《倩女幽魂》中饰演的女鬼叫什么名字?", q_en: "What is the name of the female ghost Joey Wong plays in 'A Chinese Ghost Story'?", a_cn: "聂小倩", a_en: "Nie Xiaoqian" },
-                        { category: "科学", q_cn: "冰是固体、液体还是气体?", q_en: "Is ice a solid, liquid, or gas?", a_cn: "固体", a_en: "Solid" },
-                        { category: "音乐", q_cn: "\"龙的传人\"是谁的歌?", q_en: "Whose song is 'Descendants of the Dragon'?", a_cn: "王力宏(原唱侯德健)", a_en: "Wang Leehom (originally by Hou Dejian)" },
-                        { category: "地理", q_cn: "美国的首都是哪里?", q_en: "What is the capital of the United States?", a_cn: "华盛顿", a_en: "Washington D.C." },
-                        { category: "文学", q_cn: "\"三顾茅庐\"说的是谁去请谁?", q_en: "In 'Three Visits to the Thatched Cottage', who visited whom?", a_cn: "刘备去请诸葛亮", a_en: "Liu Bei visited Zhuge Liang" },
-                        { category: "体育", q_cn: "\"世界杯\"足球赛几年举办一次?", q_en: "How often is the FIFA World Cup held?", a_cn: "4年", a_en: "Every 4 years" },
-                        { category: "娱乐", q_cn: "徐克导演的《黄飞鸿》系列电影中,黄飞鸿的扮演者是谁?", q_en: "Who plays Wong Fei-hung in Tsui Hark's 'Once Upon a Time in China' series?", a_cn: "李连杰", a_en: "Jet Li" },
-                        { category: "科学", q_cn: "太阳是恒星还是行星?", q_en: "Is the Sun a star or a planet?", a_cn: "恒星", a_en: "Star" },
-                        { category: "常识", q_cn: "\"外卖骑手\"常用的导航App是什么?(说出一个)", q_en: "What navigation app do delivery riders commonly use? (Name one)", a_cn: "高德地图/百度地图等", a_en: "Amap/Baidu Maps, etc." },
-                        { category: "音乐", q_cn: "\"东风破\"是周杰伦哪张专辑的歌?", q_en: "Which Jay Chou album is 'East Wind Breaks' from?", a_cn: "《叶惠美》", a_en: "Ye Huimei" },
-                        { category: "地理", q_cn: "马尔代夫以什么闻名?", q_en: "What is the Maldives famous for?", a_cn: "海岛度假/旅游胜地", a_en: "Island resort/tourist destination" },
-                        { category: "娱乐", q_cn: "刘德华、张学友、黎明、郭富城被称为香港\"四大天王\",他们都是哪个年代出道的?", q_en: "In which era did the 'Four Heavenly Kings' (Andy Lau, Jacky Cheung, Leon Lai, Aaron Kwok) debut?", a_cn: "80-90年代", a_en: "1980s-1990s" },
-                        { category: "文学", q_cn: "\"出师未捷身先死,长使英雄泪满襟\"说的是谁?", q_en: "Who is 'He died before achieving victory, making heroes weep' about?", a_cn: "诸葛亮", a_en: "Zhuge Liang" },
-                        { category: "科学", q_cn: "世界上最快的陆地动物是什么?", q_en: "What is the fastest land animal in the world?", a_cn: "猎豹", a_en: "Cheetah" }
-                    ]
-                }
+            "rounds": [
+                        {
+                                    "roundNumber": 1,
+                                    "questions": [
+                                                {
+                                                            "category": "音乐",
+                                                            "q_cn": "周杰伦的歌曲《青花瓷》中,\"天青色等烟雨\"的下一句是什么?",
+                                                            "q_en": "In Jay Chou's song 'Blue and White Porcelain', what is the next line after 'Azure awaits the misty rain'?",
+                                                            "a_cn": "而我在等你",
+                                                            "a_en": "And I am waiting for you"
+                                                },
+                                                {
+                                                            "category": "科学",
+                                                            "q_cn": "谁提出了进化论?",
+                                                            "q_en": "Who proposed the theory of evolution?",
+                                                            "a_cn": "达尔文",
+                                                            "a_en": "Darwin"
+                                                },
+                                                {
+                                                            "category": "千禧年回忆 (Millennial Memories)",
+                                                            "q_cn": "曾在 2000 年代风靡全亚洲的“F4”组合出自哪部偶像剧？",
+                                                            "q_en": "The boy band 'F4', which swept across Asia in the 2000s, came from which idol drama?",
+                                                            "a_cn": "流星花园",
+                                                            "a_en": "Meteor Garden"
+                                                },
+                                                {
+                                                            "category": "体育",
+                                                            "q_cn": "NBA历史上总得分最高的球员是谁?(截至2023年)",
+                                                            "q_en": "Who is the all-time leading scorer in NBA history? (As of 2023)",
+                                                            "a_cn": "勒布朗·詹姆斯",
+                                                            "a_en": "LeBron James"
+                                                },
+                                                {
+                                                            "category": "常识",
+                                                            "q_cn": "\"996\"工作制指的是什么?",
+                                                            "q_en": "What does the '996' work schedule refer to?",
+                                                            "a_cn": "早9点到晚9点,每周工作6天",
+                                                            "a_en": "9am to 9pm, 6 days a week"
+                                                },
+                                                {
+                                                            "category": "娱乐",
+                                                            "q_cn": "TVB经典剧《寻秦记》的男主角是谁?",
+                                                            "q_en": "Who is the male lead in the classic TVB series 'A Step into the Past'?",
+                                                            "a_cn": "古天乐",
+                                                            "a_en": "Louis Koo"
+                                                },
+                                                {
+                                                            "category": "艺术、文学与历史 (Arts & History)",
+                                                            "q_cn": "在希腊神话中，众神之王是谁？",
+                                                            "q_en": "In Greek mythology, who is the king of the gods?",
+                                                            "a_cn": "宙斯",
+                                                            "a_en": "Zeus"
+                                                },
+                                                {
+                                                            "category": "科学与技术 (Science & Tech)",
+                                                            "q_cn": "光速大约是每秒多少万公里？",
+                                                            "q_en": "What is the speed of light approximately in hundreds of thousands of kilometers per second?",
+                                                            "a_cn": "30万公里",
+                                                            "a_en": "300,000 km/s"
+                                                },
+                                                {
+                                                            "category": "地球村 (Geography & Nature)",
+                                                            "q_cn": "世界上唯一一个领土横跨亚欧两大洲的国家是？",
+                                                            "q_en": "Which is the only country in the world that spans across both the Asian and European continents?",
+                                                            "a_cn": "俄罗斯",
+                                                            "a_en": "Russia"
+                                                },
+                                                {
+                                                            "category": "地理",
+                                                            "q_cn": "世界上国土面积最大的国家是?",
+                                                            "q_en": "Which country has the largest land area in the world?",
+                                                            "a_cn": "俄罗斯",
+                                                            "a_en": "Russia"
+                                                },
+                                                {
+                                                            "category": "音乐",
+                                                            "q_cn": "陈慧娴的经典歌曲《千千阙歌》的原曲是来自哪个国家?",
+                                                            "q_en": "Which country is the original melody of Priscilla Chan's classic song 'A Thousand Dreams of You' from?",
+                                                            "a_cn": "日本",
+                                                            "a_en": "Japan"
+                                                },
+                                                {
+                                                            "category": "体育",
+                                                            "q_cn": "网球比赛中,\"大满贯\"指的是哪四项赛事?(说出其中一项)",
+                                                            "q_en": "In tennis, what are the four Grand Slam tournaments? (Name one)",
+                                                            "a_cn": "澳网、法网、温网、美网",
+                                                            "a_en": "Australian Open, French Open, Wimbledon, US Open"
+                                                },
+                                                {
+                                                            "category": "地理",
+                                                            "q_cn": "世界上人口最多的国家是?(截至2023年)",
+                                                            "q_en": "Which country has the largest population in the world? (As of 2023)",
+                                                            "a_cn": "印度",
+                                                            "a_en": "India"
+                                                },
+                                                {
+                                                            "category": "音乐",
+                                                            "q_cn": "Beyond乐队的主唱黄家驹在哪一年去世?",
+                                                            "q_en": "In what year did Beyond's lead singer Wong Ka Kui pass away?",
+                                                            "a_cn": "1993年",
+                                                            "a_en": "1993"
+                                                },
+                                                {
+                                                            "category": "文学",
+                                                            "q_cn": "\"哈利·波特\"系列的作者是谁?",
+                                                            "q_en": "Who is the author of the 'Harry Potter' series?",
+                                                            "a_cn": "J.K.罗琳",
+                                                            "a_en": "J.K. Rowling"
+                                                }
+                                    ]
+                        },
+                        {
+                                    "roundNumber": 2,
+                                    "questions": [
+                                                {
+                                                            "category": "科学",
+                                                            "q_cn": "光在真空中的速度约为每秒多少公里?",
+                                                            "q_en": "What is the approximate speed of light in a vacuum per second?",
+                                                            "a_cn": "30万公里",
+                                                            "a_en": "300,000 kilometers"
+                                                },
+                                                {
+                                                            "category": "体育",
+                                                            "q_cn": "网球比赛中,\"大满贯\"指的是哪四项赛事?(说出其中一项)",
+                                                            "q_en": "In tennis, what are the four Grand Slam tournaments? (Name one)",
+                                                            "a_cn": "澳网、法网、温网、美网",
+                                                            "a_en": "Australian Open, French Open, Wimbledon, US Open"
+                                                },
+                                                {
+                                                            "category": "冷知识与趣味百科 (Fun Facts)",
+                                                            "q_cn": "著名的“泰坦尼克号”最后撞上了什么？",
+                                                            "q_en": "What did the famous Titanic hit before it sank?",
+                                                            "a_cn": "冰山",
+                                                            "a_en": "Iceberg"
+                                                },
+                                                {
+                                                            "category": "文学",
+                                                            "q_cn": "\"哈利·波特\"系列的作者是谁?",
+                                                            "q_en": "Who is the author of the 'Harry Potter' series?",
+                                                            "a_cn": "J.K.罗琳",
+                                                            "a_en": "J.K. Rowling",
+                                                            "question": "权力的游戏的作者是?",
+                                                            "answer": "RR Martin"
+                                                },
+                                                {
+                                                            "category": "科学",
+                                                            "q_cn": "人体最大的器官是什么?",
+                                                            "q_en": "What is the largest organ in the human body?",
+                                                            "a_cn": "皮肤",
+                                                            "a_en": "Skin"
+                                                },
+                                                {
+                                                            "category": "科学与技术 (Science & Tech)",
+                                                            "q_cn": "化学元素周期表中，排在第一位的元素是？",
+                                                            "q_en": "What is the first element on the periodic table?",
+                                                            "a_cn": "氢 (H)",
+                                                            "a_en": "Hydrogen (H)"
+                                                },
+                                                {
+                                                            "category": "体育运动 (Sports)",
+                                                            "q_cn": "篮球巨星迈克尔·乔丹职业生涯大部分时间效力于哪支球队？",
+                                                            "q_en": "Which team did basketball legend Michael Jordan play for during most of his career?",
+                                                            "a_cn": "芝加哥公牛队",
+                                                            "a_en": "Chicago Bulls"
+                                                },
+                                                {
+                                                            "category": "艺术、文学与历史 (Arts & History)",
+                                                            "q_cn": "“生存还是毁灭，这是一个问题”出自莎士比亚的哪部作品？",
+                                                            "q_en": "In which Shakespearean work does the line 'To be, or not to be, that is the question' appear?",
+                                                            "a_cn": "哈姆雷特",
+                                                            "a_en": "Hamlet"
+                                                },
+                                                {
+                                                            "category": "大银幕与影剧 (Movies & TV)",
+                                                            "q_cn": "迪士尼第一部长篇动画电影是？",
+                                                            "q_en": "What was Disney's first full-length animated feature film?",
+                                                            "a_cn": "白雪公主",
+                                                            "a_en": "Snow White and the Seven Dwarfs"
+                                                },
+                                                {
+                                                            "category": "科学",
+                                                            "q_cn": "相对论是由哪位科学家提出的?",
+                                                            "q_en": "Which scientist proposed the theory of relativity?",
+                                                            "a_cn": "爱因斯坦",
+                                                            "a_en": "Einstein"
+                                                },
+                                                {
+                                                            "category": "娱乐",
+                                                            "q_cn": "周星驰电影《功夫》中,斧头帮帮主叫什么名字?",
+                                                            "q_en": "What is the name of the Axe Gang leader in Stephen Chow's film 'Kung Fu Hustle'?",
+                                                            "a_cn": "琛哥",
+                                                            "a_en": "Brother Sum"
+                                                },
+                                                {
+                                                            "category": "地理",
+                                                            "q_cn": "世界上最长的河流是?",
+                                                            "q_en": "What is the longest river in the world?",
+                                                            "a_cn": "尼罗河",
+                                                            "a_en": "Nile River"
+                                                },
+                                                {
+                                                            "category": "港剧经典 (TVB Memories)",
+                                                            "q_cn": "张卫健版《西游记》中，孙悟空每次变身前都会说一段很长的口诀，开头是：“我是如来佛祖玉皇大帝观音菩萨指定取西经……”？",
+                                                            "q_en": "In Dicky Cheung's version of 'Journey to the West', what is the title Sun Wukong uses in his long self-introduction?",
+                                                            "a_cn": "特派使者",
+                                                            "a_en": "Special Envoy"
+                                                },
+                                                {
+                                                            "category": "千禧年回忆 (Millennial Memories)",
+                                                            "q_cn": "经典游戏《超级玛丽》中，马里奥吃下什么会变大？",
+                                                            "q_en": "In the classic game Super Mario, what does Mario eat to grow bigger?",
+                                                            "a_cn": "蘑菇",
+                                                            "a_en": "Mushroom"
+                                                },
+                                                {
+                                                            "category": "常识",
+                                                            "q_cn": "\"24小时\"等于多少分钟?",
+                                                            "q_en": "How many minutes are in 24 hours?",
+                                                            "a_cn": "1440分钟",
+                                                            "a_en": "1440 minutes"
+                                                }
+                                    ]
+                        },
+                        {
+                                    "roundNumber": 3,
+                                    "questions": [
+                                                {
+                                                            "category": "地理",
+                                                            "q_cn": "世界上面积最大的沙漠是?",
+                                                            "q_en": "What is the largest desert in the world?",
+                                                            "a_cn": "撒哈拉沙漠",
+                                                            "a_en": "Sahara Desert"
+                                                },
+                                                {
+                                                            "category": "科学",
+                                                            "q_cn": "牛顿发现的万有引力定律是因为看到什么掉落?",
+                                                            "q_en": "What did Newton see falling that led to his discovery of the law of universal gravitation?",
+                                                            "a_cn": "苹果",
+                                                            "a_en": "Apple"
+                                                },
+                                                {
+                                                            "category": "文学",
+                                                            "q_cn": "\"床前明月光,疑是地上霜\"是谁的诗?",
+                                                            "q_en": "Who wrote the poem 'Bright moonlight before my bed, I thought it was frost on the ground'?",
+                                                            "a_cn": "李白",
+                                                            "a_en": "Li Bai"
+                                                },
+                                                {
+                                                            "category": "娱乐",
+                                                            "q_cn": "TVB经典剧集《创世纪》的主演是谁?(说出其中一位)",
+                                                            "q_en": "Who are the main actors in the classic TVB series 'At the Threshold of an Era'? (Name one)",
+                                                            "a_cn": "罗嘉良、郭晋安、陈锦鸿、古天乐",
+                                                            "a_en": "Gallen Lo, Kwok Fung, Benny Chan, Louis Koo"
+                                                },
+                                                {
+                                                            "category": "科学",
+                                                            "q_cn": "地球绕太阳转一圈需要多长时间?",
+                                                            "q_en": "How long does it take for Earth to orbit the Sun once?",
+                                                            "a_cn": "一年(365天)",
+                                                            "a_en": "One year (365 days)"
+                                                },
+                                                {
+                                                            "category": "音乐",
+                                                            "q_cn": "张学友、刘德华、郭富城、黎明四大天王中,谁获得过最多次香港十大劲歌金曲颁奖礼的\"最受欢迎男歌星\"?",
+                                                            "q_en": "Among the Four Heavenly Kings (Jacky Cheung, Andy Lau, Aaron Kwok, Leon Lai), who won the most 'Most Popular Male Singer' awards?",
+                                                            "a_cn": "张学友",
+                                                            "a_en": "Jacky Cheung"
+                                                },
+                                                {
+                                                            "category": "地球村 (Geography & Nature)",
+                                                            "q_cn": "珠穆朗玛峰位于中国与哪个国家的边境线上？",
+                                                            "q_en": "Mount Everest is located on the border between China and which country?",
+                                                            "a_cn": "尼泊尔",
+                                                            "a_en": "Nepal"
+                                                },
+                                                {
+                                                            "category": "千禧年回忆 (Millennial Memories)",
+                                                            "q_cn": "1997年上映的电影《泰坦尼克号》男主角杰克的扮演者是？",
+                                                            "q_en": "Who played the male lead, Jack, in the 1997 film Titanic?",
+                                                            "a_cn": "莱昂纳多·迪卡普里奥",
+                                                            "a_en": "Leonardo DiCaprio"
+                                                },
+                                                {
+                                                            "category": "科学与技术 (Science & Tech)",
+                                                            "q_cn": "人体中含水量最高的部分是哪个器官（约80%）？",
+                                                            "q_en": "Which organ in the human body has the highest water content (about 80%)?",
+                                                            "a_cn": "大脑",
+                                                            "a_en": "Brain"
+                                                },
+                                                {
+                                                            "category": "大银幕与影剧 (Movies & TV)",
+                                                            "q_cn": "“007”系列电影中，邦德最喜欢的饮料配方是？",
+                                                            "q_en": "In the '007' film series, what is Bond's favorite drink recipe?",
+                                                            "a_cn": "马天尼 (摇匀不要搅拌)",
+                                                            "a_en": "Martini (Shaken, not stirred)"
+                                                },
+                                                {
+                                                            "category": "艺术、文学与历史 (Arts & History)",
+                                                            "q_cn": "画作《星空》(The Starry Night) 的作者是？",
+                                                            "q_en": "Who is the artist of the painting 'The Starry Night'?",
+                                                            "a_cn": "梵高",
+                                                            "a_en": "Vincent van Gogh"
+                                                },
+                                                {
+                                                            "category": "生活百科与品牌 (Lifestyle & Brands)",
+                                                            "q_cn": "世界上最大的快餐连锁店（以门店数量计）是？",
+                                                            "q_en": "What is the largest fast-food chain in the world (by number of locations)?",
+                                                            "a_cn": "赛百味 (Subway)",
+                                                            "a_en": "Subway"
+                                                },
+                                                {
+                                                            "category": "冷知识与趣味百科 (Fun Facts)",
+                                                            "q_cn": "这种调味品如果存放得当，是永远不会变质的？",
+                                                            "q_en": "Which food seasoning never spoils if stored properly?",
+                                                            "a_cn": "蜂蜜",
+                                                            "a_en": "Honey"
+                                                },
+                                                {
+                                                            "category": "终极混战 (Mixed Ultimate)",
+                                                            "q_cn": "世界上最古老的纸币出现在哪个国家？",
+                                                            "q_en": "In which country did the world's oldest paper money appear?",
+                                                            "a_cn": "中国 (交子)",
+                                                            "a_en": "China (Jiaozi)"
+                                                },
+                                                {
+                                                            "category": "体育运动 (Sports)",
+                                                            "q_cn": "“飞鱼”是哪位游泳传奇名将的绰号？",
+                                                            "q_en": "Who is the legendary swimmer nicknamed 'The Flying Fish'?",
+                                                            "a_cn": "菲尔普斯",
+                                                            "a_en": "Michael Phelps"
+                                                }
+                                    ]
+                        },
+                        {
+                                    "roundNumber": 4,
+                                    "questions": [
+                                                {
+                                                            "category": "娱乐",
+                                                            "q_cn": "周星驰在电影《少林足球》中饰演的角色叫什么名字?",
+                                                            "q_en": "What is Stephen Chow's character name in 'Shaolin Soccer'?",
+                                                            "a_cn": "五师兄/阿星",
+                                                            "a_en": "Fifth Brother/Sing"
+                                                },
+                                                {
+                                                            "category": "地理",
+                                                            "q_cn": "地球上最大的海洋是哪个?",
+                                                            "q_en": "What is the largest ocean on Earth?",
+                                                            "a_cn": "太平洋",
+                                                            "a_en": "Pacific Ocean"
+                                                },
+                                                {
+                                                            "category": "娱乐",
+                                                            "q_cn": "香港电影金像奖的奖杯形状是什么?",
+                                                            "q_en": "What is the shape of the Hong Kong Film Awards trophy?",
+                                                            "a_cn": "人形(举起双手的人)",
+                                                            "a_en": "Human figure (person with raised arms)"
+                                                },
+                                                {
+                                                            "category": "地球村 (Geography & Nature)",
+                                                            "q_cn": "世界上最小的国家是？",
+                                                            "q_en": "What is the smallest country in the world?",
+                                                            "a_cn": "梵蒂冈",
+                                                            "a_en": "Vatican City"
+                                                },
+                                                {
+                                                            "category": "千禧年回忆 (Millennial Memories)",
+                                                            "q_cn": "诺基亚手机最经典的内置游戏是？",
+                                                            "q_en": "What is the most classic built-in game on Nokia phones?",
+                                                            "a_cn": "贪吃蛇",
+                                                            "a_en": "Snake"
+                                                },
+                                                {
+                                                            "category": "科学与技术 (Science & Tech)",
+                                                            "q_cn": "太阳系中最大的行星是？",
+                                                            "q_en": "What is the largest planet in our solar system?",
+                                                            "a_cn": "木星",
+                                                            "a_en": "Jupiter"
+                                                },
+                                                {
+                                                            "category": "大银幕与影剧 (Movies & TV)",
+                                                            "q_cn": "周星驰电影《唐伯虎点秋香》中，秋香由谁饰演？",
+                                                            "q_en": "Who played Chou Heung (Autumn Fragrance) in Stephen Chow's movie Flirting Scholar?",
+                                                            "a_cn": "巩俐",
+                                                            "a_en": "Gong Li"
+                                                },
+                                                {
+                                                            "category": "艺术、文学与历史 (Arts & History)",
+                                                            "q_cn": "中国古代“四大发明”包括造纸术、火药、指南针和？",
+                                                            "q_en": "The 'Four Great Inventions' of ancient China include papermaking, gunpowder, the compass, and what?",
+                                                            "a_cn": "印刷术",
+                                                            "a_en": "Printing"
+                                                },
+                                                {
+                                                            "category": "体育运动 (Sports)",
+                                                            "q_cn": "网球大满贯赛事中，唯一在草地上进行的是？",
+                                                            "q_en": "Which of the four tennis Grand Slams is the only one played on grass?",
+                                                            "a_cn": "温布尔登网球锦标赛",
+                                                            "a_en": "Wimbledon"
+                                                },
+                                                {
+                                                            "category": "生活百科与品牌 (Lifestyle & Brands)",
+                                                            "q_cn": "宜家 (IKEA) 品牌起源于哪个国家？",
+                                                            "q_en": "In which country did the brand IKEA originate?",
+                                                            "a_cn": "瑞典",
+                                                            "a_en": "Sweden"
+                                                },
+                                                {
+                                                            "category": "冷知识与趣味百科 (Fun Facts)",
+                                                            "q_cn": "牛有几个胃？",
+                                                            "q_en": "How many stomachs does a cow have?",
+                                                            "a_cn": "4个",
+                                                            "a_en": "4"
+                                                },
+                                                {
+                                                            "category": "终极混战 (Mixed Ultimate)",
+                                                            "q_cn": "全球最大的半导体代工厂台积电 (TSMC) 总部位于？",
+                                                            "q_en": "Where is the headquarters of TSMC, the world's largest semiconductor foundry?",
+                                                            "a_cn": "台湾",
+                                                            "a_en": "Taiwan"
+                                                },
+                                                {
+                                                            "category": "港剧经典 (TVB Memories)",
+                                                            "q_cn": "在《寻秦记》中，古天乐饰演的项少龙是从现代穿越回到了哪个朝代？",
+                                                            "q_en": "In 'A Step into the Past', Louis Koo's character travels back from modern times to which dynasty?",
+                                                            "a_cn": "秦朝",
+                                                            "a_en": "Qin Dynasty"
+                                                },
+                                                {
+                                                            "category": "港剧经典 (TVB Memories)",
+                                                            "q_cn": "黄子华在电视剧《栋笃神探》中饰演的高级督察角色名叫什么？",
+                                                            "q_en": "What was the name of the Senior Inspector played by Dayo Wong in 'To Catch The Uncatchable'?",
+                                                            "a_cn": "莫作栋",
+                                                            "a_en": "Mok Jok-dung"
+                                                },
+                                                {
+                                                            "category": "终极混战 (Mixed Ultimate)",
+                                                            "q_cn": "比特币的创始人署名是什么？",
+                                                            "q_en": "What is the pseudonym of the creator of Bitcoin?",
+                                                            "a_cn": "中本聪",
+                                                            "a_en": "Satoshi Nakamoto"
+                                                }
+                                    ]
+                        },
+                        {
+                                    "roundNumber": 5,
+                                    "questions": [
+                                                {
+                                                            "category": "科学",
+                                                            "q_cn": "发明电灯泡的科学家是谁?",
+                                                            "q_en": "Who invented the light bulb?",
+                                                            "a_cn": "爱迪生",
+                                                            "a_en": "Edison"
+                                                },
+                                                {
+                                                            "category": "体育",
+                                                            "q_cn": "姚明效力过NBA的哪支球队?",
+                                                            "q_en": "Which NBA team did Yao Ming play for?",
+                                                            "a_cn": "火箭队(休斯顿火箭)",
+                                                            "a_en": "Houston Rockets"
+                                                },
+                                                {
+                                                            "category": "文学",
+                                                            "q_cn": "\"生存还是毁灭,这是一个问题\"出自莎士比亚的哪部作品?",
+                                                            "q_en": "Which Shakespeare work contains 'To be or not to be, that is the question'?",
+                                                            "a_cn": "《哈姆雷特》",
+                                                            "a_en": "Hamlet"
+                                                },
+                                                {
+                                                            "category": "娱乐",
+                                                            "q_cn": "《喜剧之王》中周星驰饰演的角色梦想是什么?",
+                                                            "q_en": "What is Stephen Chow's character's dream in 'King of Comedy'?",
+                                                            "a_cn": "当演员",
+                                                            "a_en": "To be an actor"
+                                                },
+                                                {
+                                                            "category": "地理",
+                                                            "q_cn": "世界上最高的山峰是什么?",
+                                                            "q_en": "What is the highest mountain in the world?",
+                                                            "a_cn": "珠穆朗玛峰",
+                                                            "a_en": "Mount Everest"
+                                                },
+                                                {
+                                                            "category": "千禧年回忆 (Millennial Memories)",
+                                                            "q_cn": "苹果公司发布的第一代 iPhone 是在哪一年？",
+                                                            "q_en": "In which year did Apple release the first generation iPhone?",
+                                                            "a_cn": "2007年",
+                                                            "a_en": "2007"
+                                                },
+                                                {
+                                                            "category": "科学与技术 (Science & Tech)",
+                                                            "q_cn": "唯一一种在常温下呈液态的金属是？",
+                                                            "q_en": "What is the only metal that is liquid at room temperature?",
+                                                            "a_cn": "汞 (水银)",
+                                                            "a_en": "Mercury"
+                                                },
+                                                {
+                                                            "category": "大银幕与影剧 (Movies & TV)",
+                                                            "q_cn": "克里斯托弗·诺兰执导的，关于梦境层级的电影是？",
+                                                            "q_en": "Which Christopher Nolan film is about layers of dreams?",
+                                                            "a_cn": "盗梦空间",
+                                                            "a_en": "Inception"
+                                                },
+                                                {
+                                                            "category": "艺术、文学与历史 (Arts & History)",
+                                                            "q_cn": "文艺复兴的发源地是哪个国家？",
+                                                            "q_en": "Which country was the birthplace of the Renaissance?",
+                                                            "a_cn": "意大利",
+                                                            "a_en": "Italy"
+                                                },
+                                                {
+                                                            "category": "体育运动 (Sports)",
+                                                            "q_cn": "NBA 历史上获得总冠军次数最多的球员是？",
+                                                            "q_en": "Which player has won the most NBA championships in history?",
+                                                            "a_cn": "比尔·拉塞尔 (11次)",
+                                                            "a_en": "Bill Russell (11 times)"
+                                                },
+                                                {
+                                                            "category": "音乐",
+                                                            "q_cn": "梅艳芳最后一次演唱会是在哪一年?",
+                                                            "q_en": "In what year was Anita Mui's final concert?",
+                                                            "a_cn": "2003年",
+                                                            "a_en": "2003"
+                                                },
+                                                {
+                                                            "category": "地球村 (Geography & Nature)",
+                                                            "q_cn": "撒哈拉沙漠位于哪个大洲？",
+                                                            "q_en": "In which continent is the Sahara Desert located?",
+                                                            "a_cn": "非洲",
+                                                            "a_en": "Africa"
+                                                },
+                                                {
+                                                            "category": "生活百科与品牌 (Lifestyle & Brands)",
+                                                            "q_cn": "法拉利赛车最标志性的颜色是？",
+                                                            "q_en": "What is the most iconic color of Ferrari racing cars?",
+                                                            "a_cn": "红色",
+                                                            "a_en": "Red"
+                                                },
+                                                {
+                                                            "category": "音乐与表演艺术 (Music & Arts)",
+                                                            "q_cn": "披头士乐队 (The Beatles) 来自英国哪座城市？",
+                                                            "q_en": "Which British city did The Beatles come from?",
+                                                            "a_cn": "利物浦",
+                                                            "a_en": "Liverpool"
+                                                },
+                                                {
+                                                            "category": "冷知识与趣味百科 (Fun Facts)",
+                                                            "q_cn": "世界上最长的建筑是？",
+                                                            "q_en": "What is the longest structure in the world?",
+                                                            "a_cn": "长城",
+                                                            "a_en": "Great Wall of China"
+                                                }
+                                    ]
+                        },
+                        {
+                                    "roundNumber": 6,
+                                    "questions": [
+                                                {
+                                                            "category": "科学",
+                                                            "q_cn": "月球绕地球转一圈需要多长时间?",
+                                                            "q_en": "How long does it take for the Moon to orbit Earth once?",
+                                                            "a_cn": "约一个月(27-29天)",
+                                                            "a_en": "About one month (27-29 days)"
+                                                },
+                                                {
+                                                            "category": "文学",
+                                                            "q_cn": "《水浒传》中有多少位好汉?",
+                                                            "q_en": "How many heroes are in 'Water Margin'?",
+                                                            "a_cn": "108位",
+                                                            "a_en": "108"
+                                                },
+                                                {
+                                                            "category": "地理",
+                                                            "q_cn": "埃及的首都是哪里?",
+                                                            "q_en": "What is the capital of Egypt?",
+                                                            "a_cn": "开罗",
+                                                            "a_en": "Cairo"
+                                                },
+                                                {
+                                                            "category": "娱乐",
+                                                            "q_cn": "周星驰的电影《国产凌凌漆》是恶搞哪个系列电影?",
+                                                            "q_en": "Which film series does Stephen Chow's 'From Beijing with Love' parody?",
+                                                            "a_cn": "007(占士邦/詹姆斯·邦德)",
+                                                            "a_en": "007 (James Bond)"
+                                                },
+                                                {
+                                                            "category": "常识",
+                                                            "q_cn": "\"高铁\"的全称是什么?",
+                                                            "q_en": "What is the full name of '高铁' (Gaotie)?",
+                                                            "a_cn": "高速铁路",
+                                                            "a_en": "High-speed railway"
+                                                },
+                                                {
+                                                            "category": "体育",
+                                                            "q_cn": "游泳比赛中有哪四种泳姿?(说出其中一种)",
+                                                            "q_en": "What are the four swimming strokes in competitions? (Name one)",
+                                                            "a_cn": "自由泳、蛙泳、蝶泳、仰泳",
+                                                            "a_en": "Freestyle, Breaststroke, Butterfly, Backstroke"
+                                                },
+                                                {
+                                                            "category": "地球村 (Geography & Nature)",
+                                                            "q_cn": "“袋鼠之国”澳大利亚的首都是哪座城市？",
+                                                            "q_en": "What is the capital city of Australia, the 'Land of Kangaroos'?",
+                                                            "a_cn": "堪培拉",
+                                                            "a_en": "Canberra"
+                                                },
+                                                {
+                                                            "category": "千禧年回忆 (Millennial Memories)",
+                                                            "q_cn": "《哈利·波特》系列中，哈利额头上的伤疤是什么形状？",
+                                                            "q_en": "In the Harry Potter series, what shape is the scar on Harry's forehead?",
+                                                            "a_cn": "闪电形",
+                                                            "a_en": "Lightning bolt"
+                                                },
+                                                {
+                                                            "category": "大银幕与影剧 (Movies & TV)",
+                                                            "q_cn": "《速度与激情》系列中已故的主角扮演者是？",
+                                                            "q_en": "Who was the late lead actor in the Fast & Furious series?",
+                                                            "a_cn": "保罗·沃克",
+                                                            "a_en": "Paul Walker"
+                                                },
+                                                {
+                                                            "category": "艺术、文学与历史 (Arts & History)",
+                                                            "q_cn": "著名的“断臂维纳斯”雕塑目前收藏在哪个博物馆？",
+                                                            "q_en": "In which museum is the famous 'Venus de Milo' sculpture currently housed?",
+                                                            "a_cn": "卢浮宫",
+                                                            "a_en": "The Louvre"
+                                                },
+                                                {
+                                                            "category": "体育运动 (Sports)",
+                                                            "q_cn": "现代奥林匹克运动会的发源地是？",
+                                                            "q_en": "Where is the birthplace of the modern Olympic Games?",
+                                                            "a_cn": "希腊 (雅典)",
+                                                            "a_en": "Greece (Athens)"
+                                                },
+                                                {
+                                                            "category": "生活百科与品牌 (Lifestyle & Brands)",
+                                                            "q_cn": "在星巴克，中杯、大杯、超大杯中，最小的叫法是？",
+                                                            "q_en": "At Starbucks, between Tall, Grande, and Venti, what is the smallest size called?",
+                                                            "a_cn": "Tall",
+                                                            "a_en": "Tall"
+                                                },
+                                                {
+                                                            "category": "科学与技术 (Science & Tech)",
+                                                            "q_cn": "钻石是由哪种化学元素构成的？",
+                                                            "q_en": "What chemical element is diamond made of?",
+                                                            "a_cn": "碳",
+                                                            "a_en": "Carbon"
+                                                },
+                                                {
+                                                            "category": "冷知识与趣味百科 (Fun Facts)",
+                                                            "q_cn": "猫咪通常用哪个部位来保持平衡？",
+                                                            "q_en": "Which part of their body do cats typically use to maintain balance?",
+                                                            "a_cn": "尾巴",
+                                                            "a_en": "Tail"
+                                                },
+                                                {
+                                                            "category": "终极混战 (Mixed Ultimate)",
+                                                            "q_cn": "著名的“曼哈顿计划”是为了研制什么？",
+                                                            "q_en": "What was the famous 'Manhattan Project' designed to develop?",
+                                                            "a_cn": "原子弹",
+                                                            "a_en": "Atomic bomb"
+                                                }
+                                    ]
+                        },
+                        {
+                                    "roundNumber": 7,
+                                    "questions": [
+                                                {
+                                                            "category": "体育",
+                                                            "q_cn": "篮球比赛中,三分线外投篮命中得几分?",
+                                                            "q_en": "How many points is a shot made from beyond the three-point line in basketball?",
+                                                            "a_cn": "3分",
+                                                            "a_en": "3 points"
+                                                },
+                                                {
+                                                            "category": "科学",
+                                                            "q_cn": "钻石是由哪种元素组成的?",
+                                                            "q_en": "What element are diamonds made of?",
+                                                            "a_cn": "碳",
+                                                            "a_en": "Carbon"
+                                                },
+                                                {
+                                                            "category": "常识",
+                                                            "q_cn": "\"5G\"中的\"G\"代表什么?",
+                                                            "q_en": "What does the 'G' in '5G' stand for?",
+                                                            "a_cn": "Generation(代/世代)",
+                                                            "a_en": "Generation"
+                                                },
+                                                {
+                                                            "category": "科学",
+                                                            "q_cn": "血液循环系统中,负责输送氧气的是哪种细胞?",
+                                                            "q_en": "Which cells carry oxygen in the circulatory system?",
+                                                            "a_cn": "红细胞(红血球)",
+                                                            "a_en": "Red blood cells"
+                                                },
+                                                {
+                                                            "category": "地球村 (Geography & Nature)",
+                                                            "q_cn": "著名的“死海”之所以叫这个名字，是因为其盐度极高导致什么？",
+                                                            "q_en": "The famous 'Dead Sea' is so named because its high salinity prevents what?",
+                                                            "a_cn": "鱼类/生物无法生存",
+                                                            "a_en": "Fish or living organisms cannot survive"
+                                                },
+                                                {
+                                                            "category": "千禧年回忆 (Millennial Memories)",
+                                                            "q_cn": "著名游戏系列《最终幻想》是由哪家公司开发的？",
+                                                            "q_en": "Which company developed the famous game series Final Fantasy?",
+                                                            "a_cn": "史克威尔艾尼克斯 (Square Enix)",
+                                                            "a_en": "Square Enix"
+                                                },
+                                                {
+                                                            "category": "科学与技术 (Science & Tech)",
+                                                            "q_cn": "地球大气中含量最高的成分是？",
+                                                            "q_en": "What is the most abundant component in the Earth's atmosphere?",
+                                                            "a_cn": "氮气",
+                                                            "a_en": "Nitrogen"
+                                                },
+                                                {
+                                                            "category": "艺术、文学与历史 (Arts & History)",
+                                                            "q_cn": "日本平安时代的著名长篇小说，被称为日本文学巅峰的是？",
+                                                            "q_en": "What is the famous long novel from Japan's Heian period, often called the pinnacle of Japanese literature?",
+                                                            "a_cn": "源氏物语",
+                                                            "a_en": "The Tale of Genji"
+                                                },
+                                                {
+                                                            "category": "生活百科与品牌 (Lifestyle & Brands)",
+                                                            "q_cn": "世界上销量最高的电子游戏（单一作品）是？",
+                                                            "q_en": "What is the best-selling video game of all time (single title)?",
+                                                            "a_cn": "我的世界 (Minecraft)",
+                                                            "a_en": "Minecraft"
+                                                },
+                                                {
+                                                            "category": "音乐与表演艺术 (Music & Arts)",
+                                                            "q_cn": "获得格莱美奖最多的艺人是？",
+                                                            "q_en": "Which artist has won the most Grammy Awards?",
+                                                            "a_cn": "碧昂丝 (Beyoncé)",
+                                                            "a_en": "Beyoncé"
+                                                },
+                                                {
+                                                            "category": "娱乐",
+                                                            "q_cn": "周星驰的《审死官》中,他饰演的律师叫什么名字?",
+                                                            "q_en": "What is the name of the lawyer Stephen Chow plays in 'Justice, My Foot!'?",
+                                                            "a_cn": "宋世杰",
+                                                            "a_en": "Sung Sai-kit"
+                                                },
+                                                {
+                                                            "category": "体育运动 (Sports)",
+                                                            "q_cn": "在足球世界杯历史上，夺冠次数最多的国家是？",
+                                                            "q_en": "Which country has won the most FIFA World Cups?",
+                                                            "a_cn": "巴西",
+                                                            "a_en": "Brazil"
+                                                },
+                                                {
+                                                            "category": "音乐",
+                                                            "q_cn": "王菲的歌曲《红豆》是谁作词的?",
+                                                            "q_en": "Who wrote the lyrics for Faye Wong's song 'Red Bean'?",
+                                                            "a_cn": "林夕",
+                                                            "a_en": "Albert Leung (Lin Xi)"
+                                                },
+                                                {
+                                                            "category": "地理",
+                                                            "q_cn": "香港由哪三部分组成?",
+                                                            "q_en": "What are the three parts that make up Hong Kong?",
+                                                            "a_cn": "香港岛、九龙、新界",
+                                                            "a_en": "Hong Kong Island, Kowloon, New Territories"
+                                                },
+                                                {
+                                                            "category": "冷知识与趣味百科 (Fun Facts)",
+                                                            "q_cn": "蜜蜂在蛰人之后会发生什么？",
+                                                            "q_en": "What happens to a bee after it stings someone?",
+                                                            "a_cn": "死亡",
+                                                            "a_en": "It dies"
+                                                }
+                                    ]
+                        },
+                        {
+                                    "roundNumber": 8,
+                                    "questions": [
+                                                {
+                                                            "category": "常识",
+                                                            "q_cn": "\"外卖\"App中,\"美团\"的logo是什么颜色?",
+                                                            "q_en": "What color is Meituan's logo in the food delivery app?",
+                                                            "a_cn": "黄色",
+                                                            "a_en": "Yellow"
+                                                },
+                                                {
+                                                            "category": "音乐",
+                                                            "q_cn": "\"七里香\"是周杰伦哪一年发行的专辑?",
+                                                            "q_en": "In what year was Jay Chou's album 'Common Jasmin Orange' released?",
+                                                            "a_cn": "2004年",
+                                                            "a_en": "2004"
+                                                },
+                                                {
+                                                            "category": "地理",
+                                                            "q_cn": "泰国的首都是哪里?",
+                                                            "q_en": "What is the capital of Thailand?",
+                                                            "a_cn": "曼谷",
+                                                            "a_en": "Bangkok"
+                                                },
+                                                {
+                                                            "category": "文学",
+                                                            "q_cn": "\"两个黄鹂鸣翠柳,一行白鹭上青天\"是谁的诗?",
+                                                            "q_en": "Who wrote 'Two golden orioles sing in the green willows, a line of egrets fly into the blue sky'?",
+                                                            "a_cn": "杜甫",
+                                                            "a_en": "Du Fu"
+                                                },
+                                                {
+                                                            "category": "娱乐",
+                                                            "q_cn": "香港喜剧电影《家有喜事》的三兄弟分别由谁饰演?(说出其中一位)",
+                                                            "q_en": "Who plays the three brothers in Hong Kong comedy 'All's Well, Ends Well'? (Name one)",
+                                                            "a_cn": "周星驰、张国荣、黄百鸣",
+                                                            "a_en": "Stephen Chow, Leslie Cheung, Raymond Wong"
+                                                },
+                                                {
+                                                            "category": "科学",
+                                                            "q_cn": "企鹅生活在南极还是北极?",
+                                                            "q_en": "Do penguins live in Antarctica or the Arctic?",
+                                                            "a_cn": "南极",
+                                                            "a_en": "Antarctica"
+                                                },
+                                                {
+                                                            "category": "地理",
+                                                            "q_cn": "世界上最小的国家是?",
+                                                            "q_en": "What is the smallest country in the world?",
+                                                            "a_cn": "梵蒂冈",
+                                                            "a_en": "Vatican City"
+                                                },
+                                                {
+                                                            "category": "地球村 (Geography & Nature)",
+                                                            "q_cn": "日本的最高峰是哪座山？",
+                                                            "q_en": "What is the highest mountain in Japan?",
+                                                            "a_cn": "富士山",
+                                                            "a_en": "Mount Fuji"
+                                                },
+                                                {
+                                                            "category": "千禧年回忆 (Millennial Memories)",
+                                                            "q_cn": "2002 年世界杯足球赛是在哪两个国家举办的？",
+                                                            "q_en": "Which two countries hosted the 2002 FIFA World Cup?",
+                                                            "a_cn": "韩国、日本",
+                                                            "a_en": "South Korea, Japan"
+                                                },
+                                                {
+                                                            "category": "科学与技术 (Science & Tech)",
+                                                            "q_cn": "植物通过什么过程将光能转化为化学能？",
+                                                            "q_en": "By what process do plants convert light energy into chemical energy?",
+                                                            "a_cn": "光合作用",
+                                                            "a_en": "Photosynthesis"
+                                                },
+                                                {
+                                                            "category": "艺术、文学与历史 (Arts & History)",
+                                                            "q_cn": "拿破仑在哪场战役中惨败，从此一蹶不振？",
+                                                            "q_en": "In which battle did Napoleon suffer a crushing defeat from which he never recovered?",
+                                                            "a_cn": "滑铁卢战役",
+                                                            "a_en": "Battle of Waterloo"
+                                                },
+                                                {
+                                                            "category": "体育运动 (Sports)",
+                                                            "q_cn": "环法自行车赛的领骑者穿着什么颜色的领骑衫？",
+                                                            "q_en": "What color jersey does the leader of the Tour de France wear?",
+                                                            "a_cn": "黄色",
+                                                            "a_en": "Yellow"
+                                                },
+                                                {
+                                                            "category": "冷知识与趣味百科 (Fun Facts)",
+                                                            "q_cn": "扑克牌中唯一没有胡子的国王 (K) 是哪一张？",
+                                                            "q_en": "Which is the only King (K) in a deck of cards without a mustache?",
+                                                            "a_cn": "红桃 K",
+                                                            "a_en": "King of Hearts"
+                                                },
+                                                {
+                                                            "category": "终极混战 (Mixed Ultimate)",
+                                                            "q_cn": "在古希腊神话中，美杜莎的头发是什么组成的？",
+                                                            "q_en": "In Greek mythology, what was Medusa's hair made of?",
+                                                            "a_cn": "蛇",
+                                                            "a_en": "Snakes"
+                                                },
+                                                {
+                                                            "category": "港剧经典 (TVB Memories)",
+                                                            "q_cn": "在《法证先锋》第一、二部中，饰演法证部高级化验师“高彦博”的是哪位男演员？",
+                                                            "q_en": "Who played the Senior Chemist 'Timothy Ko' in the first two seasons of 'Forensic Heroes'?",
+                                                            "a_cn": "欧阳震华",
+                                                            "a_en": "Bobby Au-yeung"
+                                                }
+                                    ]
+                        },
+                        {
+                                    "roundNumber": 9,
+                                    "questions": [
+                                                {
+                                                            "category": "地理",
+                                                            "q_cn": "印度的首都是哪里?",
+                                                            "q_en": "What is the capital of India?",
+                                                            "a_cn": "新德里",
+                                                            "a_en": "New Delhi"
+                                                },
+                                                {
+                                                            "category": "音乐与表演艺术 (Music & Arts)",
+                                                            "q_cn": "韩国顶级男团 BTS 的中文译名是？",
+                                                            "q_en": "What is the Chinese name for the top K-pop boy band BTS?",
+                                                            "a_cn": "防弹少年团",
+                                                            "a_en": "Bangtan Boys"
+                                                },
+                                                {
+                                                            "category": "地球村 (Geography & Nature)",
+                                                            "q_cn": "哪座城市被称为“狮城”？",
+                                                            "q_en": "Which city is known as the 'Lion City'?",
+                                                            "a_cn": "新加坡",
+                                                            "a_en": "Singapore"
+                                                },
+                                                {
+                                                            "category": "港剧经典 (TVB Memories)",
+                                                            "q_cn": "《冲上云霄》第一部中，代表唐亦晨（Sam Gor）与苏怡（Zoe）缘分的公仔叫什么？",
+                                                            "q_en": "In the first 'Triumph in the Skies', what is the name of the doll that represents the fate between Sam Gor and Zoe?",
+                                                            "a_cn": "Triangel (缘分天使)",
+                                                            "a_en": "Triangel"
+                                                },
+                                                {
+                                                            "category": "文学",
+                                                            "q_cn": "\"四大名著\"指的是哪四部?(说出其中一部)",
+                                                            "q_en": "What are the 'Four Great Classical Novels'? (Name one)",
+                                                            "a_cn": "《红楼梦》《西游记》《水浒传》《三国演义》",
+                                                            "a_en": "Dream of Red Chamber, Journey to the West, Water Margin, Romance of Three Kingdoms"
+                                                },
+                                                {
+                                                            "category": "常识",
+                                                            "q_cn": "\"抖音\"是哪家公司开发的?",
+                                                            "q_en": "Which company developed 'Douyin' (TikTok)?",
+                                                            "a_cn": "字节跳动",
+                                                            "a_en": "ByteDance"
+                                                },
+                                                {
+                                                            "category": "科学",
+                                                            "q_cn": "闪电和雷声,哪个先发生?",
+                                                            "q_en": "Which happens first, lightning or thunder?",
+                                                            "a_cn": "同时发生(但光速比声速快,所以先看到闪电)",
+                                                            "a_en": "Simultaneous (but light travels faster than sound, so we see lightning first)"
+                                                },
+                                                {
+                                                            "category": "音乐",
+                                                            "q_cn": "陈奕迅的《K歌之王》是在哪一年发行的?",
+                                                            "q_en": "In what year was Eason Chan's 'King of Karaoke' released?",
+                                                            "a_cn": "2000年",
+                                                            "a_en": "2000"
+                                                },
+                                                {
+                                                            "category": "体育运动 (Sports)",
+                                                            "q_cn": "一场标准的马拉松赛跑距离是多少公里？",
+                                                            "q_en": "What is the distance of a standard marathon in kilometers?",
+                                                            "a_cn": "42.195公里",
+                                                            "a_en": "42.195 km"
+                                                },
+                                                {
+                                                            "category": "科学",
+                                                            "q_cn": "人类有多少颗牙齿?(成年人)",
+                                                            "q_en": "How many teeth do humans have? (Adults)",
+                                                            "a_cn": "32颗",
+                                                            "a_en": "32 teeth"
+                                                },
+                                                {
+                                                            "category": "艺术、文学与历史 (Arts & History)",
+                                                            "q_cn": "中国历史上唯一的正统女皇帝是？",
+                                                            "q_en": "Who was the only legitimate female emperor in Chinese history?",
+                                                            "a_cn": "武则天",
+                                                            "a_en": "Wu Zetian"
+                                                },
+                                                {
+                                                            "category": "娱乐",
+                                                            "q_cn": "《赌神》中,周润发饰演的赌神叫什么名字?",
+                                                            "q_en": "What is Chow Yun-fat's character name in 'God of Gamblers'?",
+                                                            "a_cn": "高进",
+                                                            "a_en": "Ko Chun"
+                                                },
+                                                {
+                                                            "category": "千禧年回忆 (Millennial Memories)",
+                                                            "q_cn": "第一部《玩具总动员》电影由哪家动画工作室制作？",
+                                                            "q_en": "Which animation studio produced the first Toy Story movie?",
+                                                            "a_cn": "皮克斯 (Pixar)",
+                                                            "a_en": "Pixar"
+                                                },
+                                                {
+                                                            "category": "科学与技术 (Science & Tech)",
+                                                            "q_cn": "人类有几对染色体？",
+                                                            "q_en": "How many pairs of chromosomes do humans have?",
+                                                            "a_cn": "23对",
+                                                            "a_en": "23 pairs"
+                                                },
+                                                {
+                                                            "category": "生活百科与品牌 (Lifestyle & Brands)",
+                                                            "q_cn": "著名跑车品牌“波子”是哪个品牌的俗称？",
+                                                            "q_en": "In Cantonese/Chinese slang, which car brand is referred to as 'Bo-Ji'?",
+                                                            "a_cn": "保时捷 (Porsche)",
+                                                            "a_en": "Porsche"
+                                                }
+                                    ]
+                        },
+                        {
+                                    "roundNumber": 10,
+                                    "questions": [
+                                                {
+                                                            "category": "艺术、文学与历史 (Arts & History)",
+                                                            "q_cn": "莫扎特是哪个国家的作曲家？",
+                                                            "q_en": "Mozart was a composer from which country?",
+                                                            "a_cn": "奥地利",
+                                                            "a_en": "Austria"
+                                                },
+                                                {
+                                                            "category": "科学",
+                                                            "q_cn": "世界上最快的陆地动物是什么?",
+                                                            "q_en": "What is the fastest land animal in the world?",
+                                                            "a_cn": "猎豹",
+                                                            "a_en": "Cheetah"
+                                                },
+                                                {
+                                                            "category": "音乐与表演艺术 (Music & Arts)",
+                                                            "q_cn": "吉他通常有几根弦？",
+                                                            "q_en": "How many strings does a standard guitar have?",
+                                                            "a_cn": "6根",
+                                                            "a_en": "6"
+                                                },
+                                                {
+                                                            "category": "冷知识与趣味百科 (Fun Facts)",
+                                                            "q_cn": "人的手指甲 and 脚趾甲，哪个长得快？",
+                                                            "q_en": "Between fingernails and toenails, which grow faster?",
+                                                            "a_cn": "手指甲",
+                                                            "a_en": "Fingernails"
+                                                },
+                                                {
+                                                            "category": "港剧经典 (TVB Memories)",
+                                                            "q_cn": "2014 年大热剧《使徒行者》中，佘诗曼饰演的丁小嘉，外号被称为什么？",
+                                                            "q_en": "In the 2014 hit drama 'Line Walker', what was the nickname of Ding Xiaojia (played by Charmaine Sheh)?",
+                                                            "a_cn": "钉姐",
+                                                            "a_en": "Ding Jie"
+                                                },
+                                                {
+                                                            "category": "体育运动 (Sports)",
+                                                            "q_cn": "在棒球比赛中，击球手击球后跑完四垒直接得分称为？",
+                                                            "q_en": "In baseball, what is it called when a batter hits the ball and runs all four bases to score directly?",
+                                                            "a_cn": "全垒打",
+                                                            "a_en": "Home Run"
+                                                },
+                                                {
+                                                            "category": "科学",
+                                                            "q_cn": "太阳是恒星还是行星?",
+                                                            "q_en": "Is the Sun a star or a planet?",
+                                                            "a_cn": "恒星",
+                                                            "a_en": "Star"
+                                                },
+                                                {
+                                                            "category": "终极混战 (Mixed Ultimate)",
+                                                            "q_cn": "哪位哲学家说过“我思故我在”？",
+                                                            "q_en": "Which philosopher said 'I think, therefore I am'?",
+                                                            "a_cn": "笛卡尔",
+                                                            "a_en": "René Descartes"
+                                                },
+                                                {
+                                                            "category": "文学",
+                                                            "q_cn": "\"出师未捷身先死,长使英雄泪满襟\"说的是谁?",
+                                                            "q_en": "Who is 'He died before achieving victory, making heroes weep' about?",
+                                                            "a_cn": "诸葛亮",
+                                                            "a_en": "Zhuge Liang"
+                                                },
+                                                {
+                                                            "category": "娱乐",
+                                                            "q_cn": "郑伊健在《古惑仔》系列中饰演的角色叫什么?",
+                                                            "q_en": "What character does Ekin Cheng play in the 'Young and Dangerous' series?",
+                                                            "a_cn": "陈浩南",
+                                                            "a_en": "Chan Ho-nam"
+                                                },
+                                                {
+                                                            "category": "港剧经典 (TVB Memories)",
+                                                            "q_cn": "《溏心风暴》系列中，李司棋饰演的“大契”最经典的台词是：“这里不是法庭，不需要证据，我的眼睛就是……”？",
+                                                            "q_en": "In 'Heart of Greed', Louise Lee's character said: 'This is not a court, no evidence is needed. My eyes are the...'?",
+                                                            "a_cn": "证据",
+                                                            "a_en": "Evidence"
+                                                },
+                                                {
+                                                            "category": "科学与技术 (Science & Tech)",
+                                                            "q_cn": "最早发明电灯泡（商业化成功）的科学家是？",
+                                                            "q_en": "Who was the scientist who first invented (commercially successful) the light bulb?",
+                                                            "a_cn": "爱迪生",
+                                                            "a_en": "Thomas Edison"
+                                                },
+                                                {
+                                                            "category": "生活百科与品牌 (Lifestyle & Brands)",
+                                                            "q_cn": "乐高 (LEGO) 玩具起源于哪个国家？",
+                                                            "q_en": "In which country did LEGO toys originate?",
+                                                            "a_cn": "丹麦",
+                                                            "a_en": "Denmark"
+                                                },
+                                                {
+                                                            "category": "地球村 (Geography & Nature)",
+                                                            "q_cn": "北极熊皮肤的真实颜色是什么？",
+                                                            "q_en": "What is the actual color of a polar bear's skin?",
+                                                            "a_cn": "黑色",
+                                                            "a_en": "Black"
+                                                },
+                                                {
+                                                            "category": "地理",
+                                                            "q_cn": "美国的首都是哪里?",
+                                                            "q_en": "What is the capital of the United States?",
+                                                            "a_cn": "华盛顿",
+                                                            "a_en": "Washington D.C."
+                                                }
+                                    ]
+                        }
             ],
-            questionBank: [
-                { category: "科学", q_cn: "谁提出了进化论?", q_en: "Who proposed the theory of evolution?", a_cn: "达尔文", a_en: "Darwin" },
-                { category: "科学", q_cn: "水的化学式是什么?", q_en: "What is the chemical formula for water?", a_cn: "H2O", a_en: "H2O" },
-                { category: "音乐", q_cn: "谭咏麟的歌曲《朋友》是在哪一年推出的?", q_en: "In what year was Alan Tam's song 'Friends' released?", a_cn: "1985年", a_en: "1985" },
-                { category: "音乐", q_cn: "陈慧娴的经典歌曲《千千阙歌》的原曲是来自哪个国家?", q_en: "Which country is the original melody of Priscilla Chan's classic song 'A Thousand Dreams of You' from?", a_cn: "日本", a_en: "Japan" },
-                { category: "音乐", q_cn: "张学友、刘德华、郭富城、黎明四大天王中,谁获得过最多次香港十大劲歌金曲颁奖礼的\"最受欢迎男歌星\"?", q_en: "Among the Four Heavenly Kings (Jacky Cheung, Andy Lau, Aaron Kwok, Leon Lai), who won the most 'Most Popular Male Singer' awards?", a_cn: "张学友", a_en: "Jacky Cheung" },
-                { category: "音乐", q_cn: "Beyond乐队的《真的爱你》是献给谁的歌?", q_en: "Who was Beyond's song 'Really Love You' dedicated to?", a_cn: "母亲/妈妈", a_en: "Mother/Mom" },
-                { category: "音乐", q_cn: "梅艳芳最后一次演唱会是在哪一年?", q_en: "In what year was Anita Mui's final concert?", a_cn: "2003年", a_en: "2003" },
-                { category: "音乐", q_cn: "许冠杰被称为香港\"什么之父\"?", q_en: "What is Sam Hui known as the 'Father of' in Hong Kong?", a_cn: "粤语流行曲之父", a_en: "Father of Cantopop" },
-                { category: "音乐", q_cn: "林子祥的经典歌曲《男儿当自强》是哪部电影的主题曲?", q_en: "Which movie's theme song is George Lam's classic 'A Man Should Better Himself'?", a_cn: "《黄飞鸿》", a_en: "Once Upon a Time in China" },
-                { category: "音乐", q_cn: "王菲的歌曲《红豆》是谁作词的?", q_en: "Who wrote the lyrics for Faye Wong's song 'Red Bean'?", a_cn: "林夕", a_en: "Albert Leung (Lin Xi)" },
-                { category: "音乐", q_cn: "郑秀文在2000年代最红的时期被称为什么?", q_en: "What was Sammi Cheng called during her peak popularity in the 2000s?", a_cn: "天后", a_en: "Queen/Diva" },
-                { category: "音乐", q_cn: "容祖儿的成名作是哪首歌?", q_en: "What song made Joey Yung famous?", a_cn: "《我的骄傲》", a_en: "My Pride" },
-                { category: "音乐", q_cn: "张国荣的告别演唱会叫什么名字?", q_en: "What was the name of Leslie Cheung's farewell concert?", a_cn: "跨越97演唱会", a_en: "Crossover 1997 Concert" },
-                { category: "音乐", q_cn: "陈奕迅的《K歌之王》是在哪一年发行的?", q_en: "In what year was Eason Chan's 'King of Karaoke' released?", a_cn: "2000年", a_en: "2000" },
-                { category: "娱乐", q_cn: "香港电影《胭脂扣》中,梅艳芳饰演的角色叫什么名字?", q_en: "What is the name of Anita Mui's character in the Hong Kong film 'Rouge'?", a_cn: "如花", a_en: "Fleur" },
-                { category: "娱乐", q_cn: "TVB剧集《天龙八部》中,黄日华饰演的角色是谁?", q_en: "Who did Felix Wong play in the TVB series 'Demi-Gods and Semi-Devils'?", a_cn: "乔峰/萧峰", a_en: "Qiao Feng/Xiao Feng" },
-                { category: "娱乐", q_cn: "周润发在《赌神》系列电影中的经典道具是什么?", q_en: "What is Chow Yun-fat's signature prop in the 'God of Gamblers' film series?", a_cn: "朱古力(巧克力)", a_en: "Chocolate" },
-                { category: "娱乐", q_cn: "刘德华和张曼玉主演的《旺角卡门》是谁导演的?", q_en: "Who directed 'As Tears Go By' starring Andy Lau and Maggie Cheung?", a_cn: "王家卫", a_en: "Wong Kar-wai" },
-                { category: "娱乐", q_cn: "香港电影《甜蜜蜜》中,黎明和张曼玉饰演的是什么关系?", q_en: "What relationship do Leon Lai and Maggie Cheung play in the Hong Kong film 'Comrades: Almost a Love Story'?", a_cn: "恋人/情侣", a_en: "Lovers/Couple" },
-                { category: "娱乐", q_cn: "成龙的电影中常用的特技方式是什么?", q_en: "What stunt method does Jackie Chan commonly use in his films?", a_cn: "真功夫/不用替身", a_en: "Real kung fu/No stunt doubles" },
-                { category: "娱乐", q_cn: "TVB经典剧《寻秦记》的男主角是谁?", q_en: "Who is the male lead in the classic TVB series 'A Step into the Past'?", a_cn: "古天乐", a_en: "Louis Koo" },
-                { category: "娱乐", q_cn: "张国荣在《阿飞正传》中饰演的角色叫什么名字?", q_en: "What is the name of Leslie Cheung's character in 'Days of Being Wild'?", a_cn: "旭仔", a_en: "Yuddy" },
-                { category: "娱乐", q_cn: "周星驰的《审死官》中,他饰演的律师叫什么名字?", q_en: "What is the name of the lawyer Stephen Chow plays in 'Justice, My Foot!'?", a_cn: "宋世杰", a_en: "Sung Sai-kit" },
-                { category: "娱乐", q_cn: "香港电视台TVB的中文全称是什么?", q_en: "What is the full Chinese name of Hong Kong's TVB television station?", a_cn: "电视广播有限公司", a_en: "Television Broadcasts Limited" },
-                { category: "体育", q_cn: "网球比赛中,\"大满贯\"指的是哪四项赛事?(说出其中一项)", q_en: "In tennis, what are the four Grand Slam tournaments? (Name one)", a_cn: "澳网、法网、温网、美网", a_en: "Australian Open, French Open, Wimbledon, US Open" },
-                { category: "体育", q_cn: "\"梅西\"是哪个国家的足球运动员?", q_en: "Which country is soccer player 'Messi' from?", a_cn: "阿根廷", a_en: "Argentina" },
-                { category: "地理", q_cn: "长江和黄河,哪条河更长?", q_en: "Between the Yangtze River and Yellow River, which is longer?", a_cn: "长江", a_en: "Yangtze River" },
-                { category: "地理", q_cn: "上海的简称是什么?", q_en: "What is the abbreviation for Shanghai?", a_cn: "沪", a_en: "Hu" },
-                { category: "文学", q_cn: "\"莫等闲,白了少年头,空悲切\"出自哪首词?", q_en: "Which poem contains the line 'Do not idle away your youth only to grieve in vain'?", a_cn: "《满江红》(岳飞)", a_en: "Man Jiang Hong (by Yue Fei)" },
-                { category: "文学", q_cn: "\"哈利·波特\"系列的作者是谁?", q_en: "Who is the author of the 'Harry Potter' series?", a_cn: "J.K.罗琳", a_en: "J.K. Rowling" },
-                { category: "常识", q_cn: "\"996\"工作制指的是什么?", q_en: "What does the '996' work schedule refer to?", a_cn: "早9点到晚9点,每周工作6天", a_en: "9am to 9pm, 6 days a week" },
-                { category: "常识", q_cn: "\"身份证\"的有效期有哪几种?(说出一种)", q_en: "What are the validity periods for ID cards? (Name one)", a_cn: "5年、10年、20年、长期", a_en: "5 years, 10 years, 20 years, permanent" },
-                { category: "常识", q_cn: "\"ETC\"是什么的缩写?", q_en: "What does 'ETC' stand for?", a_cn: "电子不停车收费系统", a_en: "Electronic Toll Collection" },
-                { category: "科学", q_cn: "\"AI\"是什么的缩写?", q_en: "What does 'AI' stand for?", a_cn: "人工智能(Artificial Intelligence)", a_en: "Artificial Intelligence" },
-                { category: "科学", q_cn: "人体有多少块骨头?(成年人)", q_en: "How many bones are in the human body? (Adults)", a_cn: "206块", a_en: "206 bones" },
-                { category: "音乐", q_cn: "罗文和甄妮合唱的《铁血丹心》是哪部电视剧的主题曲?", q_en: "Which TV series is the theme song 'Tie Xue Dan Xin' by Roman Tam and Jenny Tseng from?", a_cn: "《射雕英雄传》", a_en: "The Legend of the Condor Heroes" },
-                { category: "音乐", q_cn: "张学友的\"吻别\"专辑在全亚洲卖出了多少张?(约)", q_en: "How many copies did Jacky Cheung's 'Kiss Goodbye' album sell across Asia? (Approximately)", a_cn: "约400万张", a_en: "About 4 million copies" },
-                { category: "娱乐", q_cn: "郑伊健在《古惑仔》系列中饰演的角色叫什么?", q_en: "What character does Ekin Cheng play in the 'Young and Dangerous' series?", a_cn: "陈浩南", a_en: "Chan Ho-nam" },
-                { category: "娱乐", q_cn: "香港导演杜琪峰的经典黑帮电影《枪火》的主演是谁?(说出其中一位)", q_en: "Who are the main actors in Johnnie To's classic gangster film 'The Mission'? (Name one)", a_cn: "黄秋生、吴镇宇、张耀扬、吕颂贤、林雪", a_en: "Anthony Wong, Francis Ng, Roy Cheung, Lam Suet, Eddy Ko" },
-                { category: "娱乐", q_cn: "刘德华主演的《无间道》系列共有几部?", q_en: "How many films are in the 'Infernal Affairs' series starring Andy Lau?", a_cn: "3部", a_en: "3 films" },
-                { category: "娱乐", q_cn: "周星驰电影《食神》中的\"爆浆濑尿牛丸\"是什么做的?", q_en: "What is the 'Exploding Pissing Beef Ball' made of in Stephen Chow's film 'God of Cookery'?", a_cn: "牛肉/牛丸", a_en: "Beef/Beef balls" },
-                { category: "娱乐", q_cn: "香港电影《重庆森林》中,王菲饰演的角色最喜欢听什么歌?", q_en: "What song does Faye Wong's character love most in the Hong Kong film 'Chungking Express'?", a_cn: "《加州之梦》(California Dreaming)", a_en: "California Dreaming" },
-                { category: "娱乐", q_cn: "梁朝伟在《花样年华》中饰演的角色叫什么名字?", q_en: "What is the name of Tony Leung's character in 'In the Mood for Love'?", a_cn: "周慕云", a_en: "Chow Mo-wan" },
-                { category: "体育", q_cn: "\"C罗\"的全名是什么?", q_en: "What is 'Cristiano Ronaldo's' full name?", a_cn: "克里斯蒂亚诺·罗纳尔多", a_en: "Cristiano Ronaldo" },
-                { category: "体育", q_cn: "游泳比赛中有哪四种泳姿?(说出其中一种)", q_en: "What are the four swimming strokes in competitions? (Name one)", a_cn: "自由泳、蛙泳、蝶泳、仰泳", a_en: "Freestyle, Breaststroke, Butterfly, Backstroke" },
-                { category: "地理", q_cn: "香港由哪三部分组成?", q_en: "What are the three parts that make up Hong Kong?", a_cn: "香港岛、九龙、新界", a_en: "Hong Kong Island, Kowloon, New Territories" },
-                { category: "地理", q_cn: "台湾最高的山峰是什么?", q_en: "What is the highest mountain in Taiwan?", a_cn: "玉山", a_en: "Yushan (Jade Mountain)" },
-                { category: "文学", q_cn: "\"老人与海\"的作者是谁?", q_en: "Who is the author of 'The Old Man and the Sea'?", a_cn: "海明威", a_en: "Hemingway" },
-                { category: "文学", q_cn: "\"百年孤独\"的作者是谁?", q_en: "Who is the author of 'One Hundred Years of Solitude'?", a_cn: "加西亚·马尔克斯", a_en: "Gabriel García Márquez" },
-                { category: "常识", q_cn: "\"扫码支付\"最常用的两种支付方式是什么?", q_en: "What are the two most common methods for QR code payment?", a_cn: "微信支付和支付宝", a_en: "WeChat Pay and Alipay" },
-                { category: "常识", q_cn: "\"绿码\"在疫情期间代表什么?", q_en: "What does a 'green code' represent during the pandemic?", a_cn: "健康/可通行", a_en: "Healthy/Can pass" }
+            "questionBank": [
+                        {
+                                    "category": "科学",
+                                    "q_cn": "谁提出了进化论?",
+                                    "q_en": "Who proposed the theory of evolution?",
+                                    "a_cn": "达尔文",
+                                    "a_en": "Darwin"
+                        },
+                        {
+                                    "category": "音乐",
+                                    "q_cn": "陈慧娴的经典歌曲《千千阙歌》的原曲是来自哪个国家?",
+                                    "q_en": "Which country is the original melody of Priscilla Chan's classic song 'A Thousand Dreams of You' from?",
+                                    "a_cn": "日本",
+                                    "a_en": "Japan"
+                        },
+                        {
+                                    "category": "音乐",
+                                    "q_cn": "张学友、刘德华、郭富城、黎明四大天王中,谁获得过最多次香港十大劲歌金曲颁奖礼的\"最受欢迎男歌星\"?",
+                                    "q_en": "Among the Four Heavenly Kings (Jacky Cheung, Andy Lau, Aaron Kwok, Leon Lai), who won the most 'Most Popular Male Singer' awards?",
+                                    "a_cn": "张学友",
+                                    "a_en": "Jacky Cheung"
+                        },
+                        {
+                                    "category": "音乐",
+                                    "q_cn": "梅艳芳最后一次演唱会是在哪一年?",
+                                    "q_en": "In what year was Anita Mui's final concert?",
+                                    "a_cn": "2003年",
+                                    "a_en": "2003"
+                        },
+                        {
+                                    "category": "音乐",
+                                    "q_cn": "王菲的歌曲《红豆》是谁作词的?",
+                                    "q_en": "Who wrote the lyrics for Faye Wong's song 'Red Bean'?",
+                                    "a_cn": "林夕",
+                                    "a_en": "Albert Leung (Lin Xi)"
+                        },
+                        {
+                                    "category": "音乐",
+                                    "q_cn": "陈奕迅的《K歌之王》是在哪一年发行的?",
+                                    "q_en": "In what year was Eason Chan's 'King of Karaoke' released?",
+                                    "a_cn": "2000年",
+                                    "a_en": "2000"
+                        },
+                        {
+                                    "category": "娱乐",
+                                    "q_cn": "TVB经典剧《寻秦记》的男主角是谁?",
+                                    "q_en": "Who is the male lead in the classic TVB series 'A Step into the Past'?",
+                                    "a_cn": "古天乐",
+                                    "a_en": "Louis Koo"
+                        },
+                        {
+                                    "category": "娱乐",
+                                    "q_cn": "周星驰的《审死官》中,他饰演的律师叫什么名字?",
+                                    "q_en": "What is the name of the lawyer Stephen Chow plays in 'Justice, My Foot!'?",
+                                    "a_cn": "宋世杰",
+                                    "a_en": "Sung Sai-kit"
+                        },
+                        {
+                                    "category": "体育",
+                                    "q_cn": "网球比赛中,\"大满贯\"指的是哪四项赛事?(说出其中一项)",
+                                    "q_en": "In tennis, what are the four Grand Slam tournaments? (Name one)",
+                                    "a_cn": "澳网、法网、温网、美网",
+                                    "a_en": "Australian Open, French Open, Wimbledon, US Open"
+                        },
+                        {
+                                    "category": "文学",
+                                    "q_cn": "\"哈利·波特\"系列的作者是谁?",
+                                    "q_en": "Who is the author of the 'Harry Potter' series?",
+                                    "a_cn": "J.K.罗琳",
+                                    "a_en": "J.K. Rowling"
+                        },
+                        {
+                                    "category": "常识",
+                                    "q_cn": "\"996\"工作制指的是什么?",
+                                    "q_en": "What does the '996' work schedule refer to?",
+                                    "a_cn": "早9点到晚9点,每周工作6天",
+                                    "a_en": "9am to 9pm, 6 days a week"
+                        },
+                        {
+                                    "category": "娱乐",
+                                    "q_cn": "郑伊健在《古惑仔》系列中饰演的角色叫什么?",
+                                    "q_en": "What character does Ekin Cheng play in the 'Young and Dangerous' series?",
+                                    "a_cn": "陈浩南",
+                                    "a_en": "Chan Ho-nam"
+                        },
+                        {
+                                    "category": "娱乐",
+                                    "q_cn": "香港导演杜琪峰的经典黑帮电影《枪火》的主演是谁?(说出其中一位)",
+                                    "q_en": "Who are the main actors in Johnnie To's classic gangster film 'The Mission'? (Name one)",
+                                    "a_cn": "黄秋生、吴镇宇、张耀扬、吕颂贤、林雪",
+                                    "a_en": "Anthony Wong, Francis Ng, Roy Cheung, Lam Suet, Eddy Ko"
+                        },
+                        {
+                                    "category": "娱乐",
+                                    "q_cn": "刘德华主演的《无间道》系列共有几部?",
+                                    "q_en": "How many films are in the 'Infernal Affairs' series starring Andy Lau?",
+                                    "a_cn": "3部",
+                                    "a_en": "3 films"
+                        },
+                        {
+                                    "category": "娱乐",
+                                    "q_cn": "周星驰电影《食神》中的\"爆浆濑尿牛丸\"是什么做的?",
+                                    "q_en": "What is the 'Exploding Pissing Beef Ball' made of in Stephen Chow's film 'God of Cookery'?",
+                                    "a_cn": "牛肉/牛丸",
+                                    "a_en": "Beef/Beef balls"
+                        },
+                        {
+                                    "category": "娱乐",
+                                    "q_cn": "香港电影《重庆森林》中,王菲饰演的角色最喜欢听什么歌?",
+                                    "q_en": "What song does Faye Wong's character love most in the Hong Kong film 'Chungking Express'?",
+                                    "a_cn": "《加州之梦》(California Dreaming)",
+                                    "a_en": "California Dreaming"
+                        },
+                        {
+                                    "category": "娱乐",
+                                    "q_cn": "梁朝伟在《花样年华》中饰演的角色叫什么名字?",
+                                    "q_en": "What is the name of Tony Leung's character in 'In the Mood for Love'?",
+                                    "a_cn": "周慕云",
+                                    "a_en": "Chow Mo-wan"
+                        },
+                        {
+                                    "category": "体育",
+                                    "q_cn": "游泳比赛中有哪四种泳姿?(说出其中一种)",
+                                    "q_en": "What are the four swimming strokes in competitions? (Name one)",
+                                    "a_cn": "自由泳、蛙泳、蝶泳、仰泳",
+                                    "a_en": "Freestyle, Breaststroke, Butterfly, Backstroke"
+                        },
+                        {
+                                    "category": "地理",
+                                    "q_cn": "香港由哪三部分组成?",
+                                    "q_en": "What are the three parts that make up Hong Kong?",
+                                    "a_cn": "香港岛、九龙、新界",
+                                    "a_en": "Hong Kong Island, Kowloon, New Territories"
+                        },
+                        {
+                                    "category": "地理",
+                                    "q_cn": "台湾最高的山峰是什么?",
+                                    "q_en": "What is the highest mountain in Taiwan?",
+                                    "a_cn": "玉山",
+                                    "a_en": "Yushan (Jade Mountain)"
+                        },
+                        {
+                                    "category": "地球村 (Geography & Nature)",
+                                    "q_cn": "珠穆朗玛峰位于中国与哪个国家的边境线上？",
+                                    "q_en": "Mount Everest is located on the border between China and which country?",
+                                    "a_cn": "尼泊尔",
+                                    "a_en": "Nepal"
+                        },
+                        {
+                                    "category": "地球村 (Geography & Nature)",
+                                    "q_cn": "世界上最小的国家是？",
+                                    "q_en": "What is the smallest country in the world?",
+                                    "a_cn": "梵蒂冈",
+                                    "a_en": "Vatican City"
+                        },
+                        {
+                                    "category": "地球村 (Geography & Nature)",
+                                    "q_cn": "“袋鼠之国”澳大利亚的首都是哪座城市？",
+                                    "q_en": "What is the capital city of Australia, the 'Land of Kangaroos'?",
+                                    "a_cn": "堪培拉",
+                                    "a_en": "Canberra"
+                        },
+                        {
+                                    "category": "地球村 (Geography & Nature)",
+                                    "q_cn": "撒哈拉沙漠位于哪个大洲？",
+                                    "q_en": "In which continent is the Sahara Desert located?",
+                                    "a_cn": "非洲",
+                                    "a_en": "Africa"
+                        },
+                        {
+                                    "category": "地球村 (Geography & Nature)",
+                                    "q_cn": "著名的“死海”之所以叫这个名字，是因为其盐度极高导致什么？",
+                                    "q_en": "The famous 'Dead Sea' is so named because its high salinity prevents what?",
+                                    "a_cn": "鱼类/生物无法生存",
+                                    "a_en": "Fish or living organisms cannot survive"
+                        },
+                        {
+                                    "category": "地球村 (Geography & Nature)",
+                                    "q_cn": "日本的最高峰是哪座山？",
+                                    "q_en": "What is the highest mountain in Japan?",
+                                    "a_cn": "富士山",
+                                    "a_en": "Mount Fuji"
+                        },
+                        {
+                                    "category": "地球村 (Geography & Nature)",
+                                    "q_cn": "哪座城市被称为“狮城”？",
+                                    "q_en": "Which city is known as the 'Lion City'?",
+                                    "a_cn": "新加坡",
+                                    "a_en": "Singapore"
+                        },
+                        {
+                                    "category": "地球村 (Geography & Nature)",
+                                    "q_cn": "北极熊皮肤的真实颜色是什么？",
+                                    "q_en": "What is the actual color of a polar bear's skin?",
+                                    "a_cn": "黑色",
+                                    "a_en": "Black"
+                        },
+                        {
+                                    "category": "千禧年回忆 (Millennial Memories)",
+                                    "q_cn": "经典游戏《超级玛丽》中，马里奥吃下什么会变大？",
+                                    "q_en": "In the classic game Super Mario, what does Mario eat to grow bigger?",
+                                    "a_cn": "蘑菇",
+                                    "a_en": "Mushroom"
+                        },
+                        {
+                                    "category": "千禧年回忆 (Millennial Memories)",
+                                    "q_cn": "1997年上映的电影《泰坦尼克号》男主角杰克的扮演者是？",
+                                    "q_en": "Who played the male lead, Jack, in the 1997 film Titanic?",
+                                    "a_cn": "莱昂纳多·迪卡普里奥",
+                                    "a_en": "Leonardo DiCaprio"
+                        },
+                        {
+                                    "category": "千禧年回忆 (Millennial Memories)",
+                                    "q_cn": "诺基亚手机最经典的内置游戏是？",
+                                    "q_en": "What is the most classic built-in game on Nokia phones?",
+                                    "a_cn": "贪吃蛇",
+                                    "a_en": "Snake"
+                        },
+                        {
+                                    "category": "千禧年回忆 (Millennial Memories)",
+                                    "q_cn": "曾在 2000 年代风靡全亚洲的“F4”组合出自哪部偶像剧？",
+                                    "q_en": "The boy band 'F4', which swept across Asia in the 2000s, came from which idol drama?",
+                                    "a_cn": "流星花园",
+                                    "a_en": "Meteor Garden"
+                        },
+                        {
+                                    "category": "千禧年回忆 (Millennial Memories)",
+                                    "q_cn": "苹果公司发布的第一代 iPhone 是在哪一年？",
+                                    "q_en": "In which year did Apple release the first generation iPhone?",
+                                    "a_cn": "2007年",
+                                    "a_en": "2007"
+                        },
+                        {
+                                    "category": "千禧年回忆 (Millennial Memories)",
+                                    "q_cn": "《哈利·波特》系列中，哈利额头上的伤疤是什么形状？",
+                                    "q_en": "In the Harry Potter series, what shape is the scar on Harry's forehead?",
+                                    "a_cn": "闪电形",
+                                    "a_en": "Lightning bolt"
+                        },
+                        {
+                                    "category": "千禧年回忆 (Millennial Memories)",
+                                    "q_cn": "著名游戏系列《最终幻想》是由哪家公司开发的？",
+                                    "q_en": "Which company developed the famous game series Final Fantasy?",
+                                    "a_cn": "史克威尔艾尼克斯 (Square Enix)",
+                                    "a_en": "Square Enix"
+                        },
+                        {
+                                    "category": "千禧年回忆 (Millennial Memories)",
+                                    "q_cn": "2002 年世界杯足球赛是在哪两个国家举办的？",
+                                    "q_en": "Which two countries hosted the 2002 FIFA World Cup?",
+                                    "a_cn": "韩国、日本",
+                                    "a_en": "South Korea, Japan"
+                        },
+                        {
+                                    "category": "千禧年回忆 (Millennial Memories)",
+                                    "q_cn": "第一部《玩具总动员》电影由哪家动画工作室制作？",
+                                    "q_en": "Which animation studio produced the first Toy Story movie?",
+                                    "a_cn": "皮克斯 (Pixar)",
+                                    "a_en": "Pixar"
+                        },
+                        {
+                                    "category": "科学与技术 (Science & Tech)",
+                                    "q_cn": "化学元素周期表中，排在第一位的元素是？",
+                                    "q_en": "What is the first element on the periodic table?",
+                                    "a_cn": "氢 (H)",
+                                    "a_en": "Hydrogen (H)"
+                        },
+                        {
+                                    "category": "科学与技术 (Science & Tech)",
+                                    "q_cn": "人体中含水量最高的部分是哪个器官（约80%）？",
+                                    "q_en": "Which organ in the human body has the highest water content (about 80%)?",
+                                    "a_cn": "大脑",
+                                    "a_en": "Brain"
+                        },
+                        {
+                                    "category": "科学与技术 (Science & Tech)",
+                                    "q_cn": "光速大约是每秒多少万公里？",
+                                    "q_en": "What is the speed of light approximately in hundreds of thousands of kilometers per second?",
+                                    "a_cn": "30万公里",
+                                    "a_en": "300,000 km/s"
+                        },
+                        {
+                                    "category": "科学与技术 (Science & Tech)",
+                                    "q_cn": "太阳系中最大的行星是？",
+                                    "q_en": "What is the largest planet in our solar system?",
+                                    "a_cn": "木星",
+                                    "a_en": "Jupiter"
+                        },
+                        {
+                                    "category": "科学与技术 (Science & Tech)",
+                                    "q_cn": "唯一一种在常温下呈液态的金属是？",
+                                    "q_en": "What is the only metal that is liquid at room temperature?",
+                                    "a_cn": "汞 (水银)",
+                                    "a_en": "Mercury"
+                        },
+                        {
+                                    "category": "科学与技术 (Science & Tech)",
+                                    "q_cn": "地球大气中含量最高的成分是？",
+                                    "q_en": "What is the most abundant component in the Earth's atmosphere?",
+                                    "a_cn": "氮气",
+                                    "a_en": "Nitrogen"
+                        },
+                        {
+                                    "category": "科学与技术 (Science & Tech)",
+                                    "q_cn": "植物通过什么过程将光能转化为化学能？",
+                                    "q_en": "By what process do plants convert light energy into chemical energy?",
+                                    "a_cn": "光合作用",
+                                    "a_en": "Photosynthesis"
+                        },
+                        {
+                                    "category": "科学与技术 (Science & Tech)",
+                                    "q_cn": "人类有几对染色体？",
+                                    "q_en": "How many pairs of chromosomes do humans have?",
+                                    "a_cn": "23对",
+                                    "a_en": "23 pairs"
+                        },
+                        {
+                                    "category": "科学与技术 (Science & Tech)",
+                                    "q_cn": "最早发明电灯泡（商业化成功）的科学家是？",
+                                    "q_en": "Who was the scientist who first invented (commercially successful) the light bulb?",
+                                    "a_cn": "爱迪生",
+                                    "a_en": "Thomas Edison"
+                        },
+                        {
+                                    "category": "科学与技术 (Science & Tech)",
+                                    "q_cn": "钻石是由哪种化学元素构成的？",
+                                    "q_en": "What chemical element is diamond made of?",
+                                    "a_cn": "碳",
+                                    "a_en": "Carbon"
+                        },
+                        {
+                                    "category": "科学与技术 (Science & Tech)",
+                                    "q_cn": "全球定位系统的英文缩写是？",
+                                    "q_en": "What is the English abbreviation for Global Positioning System?",
+                                    "a_cn": "GPS",
+                                    "a_en": "GPS"
+                        },
+                        {
+                                    "category": "科学与技术 (Science & Tech)",
+                                    "q_cn": "哪种细胞负责在人体内运输氧气？",
+                                    "q_en": "Which cells are responsible for transporting oxygen within the human body?",
+                                    "a_cn": "红细胞",
+                                    "a_en": "Red blood cells"
+                        },
+                        {
+                                    "category": "科学与技术 (Science & Tech)",
+                                    "q_cn": "蝙蝠寻找猎物主要是靠超声波还是视力？",
+                                    "q_en": "Do bats hunt prey mainly using ultrasound or eyesight?",
+                                    "a_cn": "超声波 (回声定位)",
+                                    "a_en": "Ultrasound (Echolocation)"
+                        },
+                        {
+                                    "category": "大银幕与影剧 (Movies & TV)",
+                                    "q_cn": "迪士尼第一部长篇动画电影是？",
+                                    "q_en": "What was Disney's first full-length animated feature film?",
+                                    "a_cn": "白雪公主",
+                                    "a_en": "Snow White and the Seven Dwarfs"
+                        },
+                        {
+                                    "category": "大银幕与影剧 (Movies & TV)",
+                                    "q_cn": "“007”系列电影中，邦德最喜欢的饮料配方是？",
+                                    "q_en": "In the '007' film series, what is Bond's favorite drink recipe?",
+                                    "a_cn": "马天尼 (摇匀不要搅拌)",
+                                    "a_en": "Martini (Shaken, not stirred)"
+                        },
+                        {
+                                    "category": "大银幕与影剧 (Movies & TV)",
+                                    "q_cn": "周星驰电影《唐伯虎点秋香》中，秋香由谁饰演？",
+                                    "q_en": "Who played Chou Heung (Autumn Fragrance) in Stephen Chow's movie Flirting Scholar?",
+                                    "a_cn": "巩俐",
+                                    "a_en": "Gong Li"
+                        },
+                        {
+                                    "category": "大银幕与影剧 (Movies & TV)",
+                                    "q_cn": "克里斯托弗·诺兰执导的，关于梦境层级的电影是？",
+                                    "q_en": "Which Christopher Nolan film is about layers of dreams?",
+                                    "a_cn": "盗梦空间",
+                                    "a_en": "Inception"
+                        },
+                        {
+                                    "category": "大银幕与影剧 (Movies & TV)",
+                                    "q_cn": "《速度与激情》系列中已故的主角扮演者是？",
+                                    "q_en": "Who was the late lead actor in the Fast & Furious series?",
+                                    "a_cn": "保罗·沃克",
+                                    "a_en": "Paul Walker"
+                        },
+                        {
+                                    "category": "艺术、文学与历史 (Arts & History)",
+                                    "q_cn": "“生存还是毁灭，这是一个问题”出自莎士比亚的哪部作品？",
+                                    "q_en": "In which Shakespearean work does the line 'To be, or not to be, that is the question' appear?",
+                                    "a_cn": "哈姆雷特",
+                                    "a_en": "Hamlet"
+                        },
+                        {
+                                    "category": "艺术、文学与历史 (Arts & History)",
+                                    "q_cn": "画作《星空》(The Starry Night) 的作者是？",
+                                    "q_en": "Who is the artist of the painting 'The Starry Night'?",
+                                    "a_cn": "梵高",
+                                    "a_en": "Vincent van Gogh"
+                        },
+                        {
+                                    "category": "艺术、文学与历史 (Arts & History)",
+                                    "q_cn": "中国古代“四大发明”包括造纸术、火药、指南针和？",
+                                    "q_en": "The 'Four Great Inventions' of ancient China include papermaking, gunpowder, the compass, and what?",
+                                    "a_cn": "印刷术",
+                                    "a_en": "Printing"
+                        },
+                        {
+                                    "category": "艺术、文学与历史 (Arts & History)",
+                                    "q_cn": "文艺复兴的发源地是哪个国家？",
+                                    "q_en": "Which country was the birthplace of the Renaissance?",
+                                    "a_cn": "意大利",
+                                    "a_en": "Italy"
+                        },
+                        {
+                                    "category": "艺术、文学与历史 (Arts & History)",
+                                    "q_cn": "著名的“断臂维纳斯”雕塑目前收藏在哪个博物馆？",
+                                    "q_en": "In which museum is the famous 'Venus de Milo' sculpture currently housed?",
+                                    "a_cn": "卢浮宫",
+                                    "a_en": "The Louvre"
+                        },
+                        {
+                                    "category": "艺术、文学与历史 (Arts & History)",
+                                    "q_cn": "日本平安时代的著名长篇小说，被称为日本文学巅峰的是？",
+                                    "q_en": "What is the famous long novel from Japan's Heian period, often called the pinnacle of Japanese literature?",
+                                    "a_cn": "源氏物语",
+                                    "a_en": "The Tale of Genji"
+                        },
+                        {
+                                    "category": "艺术、文学与历史 (Arts & History)",
+                                    "q_cn": "拿破仑在哪场战役中惨败，从此一蹶不振？",
+                                    "q_en": "In which battle did Napoleon suffer a crushing defeat from which he never recovered?",
+                                    "a_cn": "滑铁卢战役",
+                                    "a_en": "Battle of Waterloo"
+                        },
+                        {
+                                    "category": "艺术、文学与历史 (Arts & History)",
+                                    "q_cn": "中国历史上唯一的正统女皇帝是？",
+                                    "q_en": "Who was the only legitimate female emperor in Chinese history?",
+                                    "a_cn": "武则天",
+                                    "a_en": "Wu Zetian"
+                        },
+                        {
+                                    "category": "艺术、文学与历史 (Arts & History)",
+                                    "q_cn": "莫扎特是哪个国家的作曲家？",
+                                    "q_en": "Mozart was a composer from which country?",
+                                    "a_cn": "奥地利",
+                                    "a_en": "Austria"
+                        },
+                        {
+                                    "category": "艺术、文学与历史 (Arts & History)",
+                                    "q_cn": "在希腊神话中，众神之王是谁？",
+                                    "q_en": "In Greek mythology, who is the king of the gods?",
+                                    "a_cn": "宙斯",
+                                    "a_en": "Zeus"
+                        },
+                        {
+                                    "category": "体育运动 (Sports)",
+                                    "q_cn": "篮球巨星迈克尔·乔丹职业生涯大部分时间效力于哪支球队？",
+                                    "q_en": "Which team did basketball legend Michael Jordan play for during most of his career?",
+                                    "a_cn": "芝加哥公牛队",
+                                    "a_en": "Chicago Bulls"
+                        },
+                        {
+                                    "category": "体育运动 (Sports)",
+                                    "q_cn": "网球大满贯赛事中，唯一在草地上进行的是？",
+                                    "q_en": "Which of the four tennis Grand Slams is the only one played on grass?",
+                                    "a_cn": "温布尔登网球锦标赛",
+                                    "a_en": "Wimbledon"
+                        },
+                        {
+                                    "category": "体育运动 (Sports)",
+                                    "q_cn": "NBA 历史上获得总冠军次数最多的球员是？",
+                                    "q_en": "Which player has won the most NBA championships in history?",
+                                    "a_cn": "比尔·拉塞尔 (11次)",
+                                    "a_en": "Bill Russell (11 times)"
+                        },
+                        {
+                                    "category": "体育运动 (Sports)",
+                                    "q_cn": "现代奥林匹克运动会的发源地是？",
+                                    "q_en": "Where is the birthplace of the modern Olympic Games?",
+                                    "a_cn": "希腊 (雅典)",
+                                    "a_en": "Greece (Athens)"
+                        },
+                        {
+                                    "category": "体育运动 (Sports)",
+                                    "q_cn": "在足球世界杯历史上，夺冠次数最多的国家是？",
+                                    "q_en": "Which country has won the most FIFA World Cups?",
+                                    "a_cn": "巴西",
+                                    "a_en": "Brazil"
+                        },
+                        {
+                                    "category": "体育运动 (Sports)",
+                                    "q_cn": "一场标准的马拉松赛跑距离是多少公里？",
+                                    "q_en": "What is the distance of a standard marathon in kilometers?",
+                                    "a_cn": "42.195公里",
+                                    "a_en": "42.195 km"
+                        },
+                        {
+                                    "category": "体育运动 (Sports)",
+                                    "q_cn": "在棒球比赛中，击球手击球后跑完四垒直接得分称为？",
+                                    "q_en": "In baseball, what is it called when a batter hits the ball and runs all four bases to score directly?",
+                                    "a_cn": "全垒打",
+                                    "a_en": "Home Run"
+                        },
+                        {
+                                    "category": "体育运动 (Sports)",
+                                    "q_cn": "“飞鱼”是哪位游泳传奇名将的绰号？",
+                                    "q_en": "Who is the legendary swimmer nicknamed 'The Flying Fish'?",
+                                    "a_cn": "菲尔普斯",
+                                    "a_en": "Michael Phelps"
+                        },
+                        {
+                                    "category": "体育运动 (Sports)",
+                                    "q_cn": "环法自行车赛的领骑者穿着什么颜色的领骑衫？",
+                                    "q_en": "What color jersey does the leader of the Tour de France wear?",
+                                    "a_cn": "黄色",
+                                    "a_en": "Yellow"
+                        },
+                        {
+                                    "category": "生活百科与品牌 (Lifestyle & Brands)",
+                                    "q_cn": "世界上最大的快餐连锁店（以门店数量计）是？",
+                                    "q_en": "What is the largest fast-food chain in the world (by number of locations)?",
+                                    "a_cn": "赛百味 (Subway)",
+                                    "a_en": "Subway"
+                        },
+                        {
+                                    "category": "生活百科与品牌 (Lifestyle & Brands)",
+                                    "q_cn": "宜家 (IKEA) 品牌起源于哪个国家？",
+                                    "q_en": "In which country did the brand IKEA originate?",
+                                    "a_cn": "瑞典",
+                                    "a_en": "Sweden"
+                        },
+                        {
+                                    "category": "生活百科与品牌 (Lifestyle & Brands)",
+                                    "q_cn": "在星巴克，中杯、大杯、超大杯中，最小的叫法是？",
+                                    "q_en": "At Starbucks, between Tall, Grande, and Venti, what is the smallest size called?",
+                                    "a_cn": "Tall",
+                                    "a_en": "Tall"
+                        },
+                        {
+                                    "category": "生活百科与品牌 (Lifestyle & Brands)",
+                                    "q_cn": "法拉利赛车最标志性的颜色是？",
+                                    "q_en": "What is the most iconic color of Ferrari racing cars?",
+                                    "a_cn": "红色",
+                                    "a_en": "Red"
+                        },
+                        {
+                                    "category": "生活百科与品牌 (Lifestyle & Brands)",
+                                    "q_cn": "世界上销量最高的电子游戏（单一作品）是？",
+                                    "q_en": "What is the best-selling video game of all time (single title)?",
+                                    "a_cn": "我的世界 (Minecraft)",
+                                    "a_en": "Minecraft"
+                        },
+                        {
+                                    "category": "生活百科与品牌 (Lifestyle & Brands)",
+                                    "q_cn": "著名跑车品牌“波子”是哪个品牌的俗称？",
+                                    "q_en": "In Cantonese/Chinese slang, which car brand is referred to as 'Bo-Ji'?",
+                                    "a_cn": "保时捷 (Porsche)",
+                                    "a_en": "Porsche"
+                        },
+                        {
+                                    "category": "生活百科与品牌 (Lifestyle & Brands)",
+                                    "q_cn": "乐高 (LEGO) 玩具起源于哪个国家？",
+                                    "q_en": "In which country did LEGO toys originate?",
+                                    "a_cn": "丹麦",
+                                    "a_en": "Denmark"
+                        },
+                        {
+                                    "category": "音乐与表演艺术 (Music & Arts)",
+                                    "q_cn": "披头士乐队 (The Beatles) 来自英国哪座城市？",
+                                    "q_en": "Which British city did The Beatles come from?",
+                                    "a_cn": "利物浦",
+                                    "a_en": "Liverpool"
+                        },
+                        {
+                                    "category": "音乐与表演艺术 (Music & Arts)",
+                                    "q_cn": "获得格莱美奖最多的艺人是？",
+                                    "q_en": "Which artist has won the most Grammy Awards?",
+                                    "a_cn": "碧昂丝 (Beyoncé)",
+                                    "a_en": "Beyoncé"
+                        },
+                        {
+                                    "category": "音乐与表演艺术 (Music & Arts)",
+                                    "q_cn": "韩国顶级男团 BTS 的中文译名是？",
+                                    "q_en": "What is the Chinese name for the top K-pop boy band BTS?",
+                                    "a_cn": "防弹少年团",
+                                    "a_en": "Bangtan Boys"
+                        },
+                        {
+                                    "category": "音乐与表演艺术 (Music & Arts)",
+                                    "q_cn": "吉他通常有几根弦？",
+                                    "q_en": "How many strings does a standard guitar have?",
+                                    "a_cn": "6根",
+                                    "a_en": "6"
+                        },
+                        {
+                                    "category": "冷知识与趣味百科 (Fun Facts)",
+                                    "q_cn": "蜜蜂在蛰人之后会发生什么？",
+                                    "q_en": "What happens to a bee after it stings someone?",
+                                    "a_cn": "死亡",
+                                    "a_en": "It dies"
+                        },
+                        {
+                                    "category": "冷知识与趣味百科 (Fun Facts)",
+                                    "q_cn": "人的手指甲 and 脚趾甲，哪个长得快？",
+                                    "q_en": "Between fingernails and toenails, which grow faster?",
+                                    "a_cn": "手指甲",
+                                    "a_en": "Fingernails"
+                        },
+                        {
+                                    "category": "冷知识与趣味百科 (Fun Facts)",
+                                    "q_cn": "著名的“泰坦尼克号”最后撞上了什么？",
+                                    "q_en": "What did the famous Titanic hit before it sank?",
+                                    "a_cn": "冰山",
+                                    "a_en": "Iceberg"
+                        },
+                        {
+                                    "category": "冷知识与趣味百科 (Fun Facts)",
+                                    "q_cn": "这种调味品如果存放得当，是永远不会变质的？",
+                                    "q_en": "Which food seasoning never spoils if stored properly?",
+                                    "a_cn": "蜂蜜",
+                                    "a_en": "Honey"
+                        },
+                        {
+                                    "category": "冷知识与趣味百科 (Fun Facts)",
+                                    "q_cn": "牛有几个胃？",
+                                    "q_en": "How many stomachs does a cow have?",
+                                    "a_cn": "4个",
+                                    "a_en": "4"
+                        },
+                        {
+                                    "category": "冷知识与趣味百科 (Fun Facts)",
+                                    "q_cn": "世界上最长的建筑是？",
+                                    "q_en": "What is the longest structure in the world?",
+                                    "a_cn": "长城",
+                                    "a_en": "Great Wall of China"
+                        },
+                        {
+                                    "category": "冷知识与趣味百科 (Fun Facts)",
+                                    "q_cn": "猫咪通常用哪个部位来保持平衡？",
+                                    "q_en": "Which part of their body do cats typically use to maintain balance?",
+                                    "a_cn": "尾巴",
+                                    "a_en": "Tail"
+                        },
+                        {
+                                    "category": "冷知识与趣味百科 (Fun Facts)",
+                                    "q_cn": "扑克牌中唯一没有胡子的国王 (K) 是哪一张？",
+                                    "q_en": "Which is the only King (K) in a deck of cards without a mustache?",
+                                    "a_cn": "红桃 K",
+                                    "a_en": "King of Hearts"
+                        },
+                        {
+                                    "category": "终极混战 (Mixed Ultimate)",
+                                    "q_cn": "哪位哲学家说过“我思故我在”？",
+                                    "q_en": "Which philosopher said 'I think, therefore I am'?",
+                                    "a_cn": "笛卡尔",
+                                    "a_en": "René Descartes"
+                        },
+                        {
+                                    "category": "终极混战 (Mixed Ultimate)",
+                                    "q_cn": "世界上最古老的纸币出现在哪个国家？",
+                                    "q_en": "In which country did the world's oldest paper money appear?",
+                                    "a_cn": "中国 (交子)",
+                                    "a_en": "China (Jiaozi)"
+                        },
+                        {
+                                    "category": "终极混战 (Mixed Ultimate)",
+                                    "q_cn": "全球最大的半导体代工厂台积电 (TSMC) 总部位于？",
+                                    "q_en": "Where is the headquarters of TSMC, the world's largest semiconductor foundry?",
+                                    "a_cn": "台湾",
+                                    "a_en": "Taiwan"
+                        },
+                        {
+                                    "category": "终极混战 (Mixed Ultimate)",
+                                    "q_cn": "比特币的创始人署名是什么？",
+                                    "q_en": "What is the pseudonym of the creator of Bitcoin?",
+                                    "a_cn": "中本聪",
+                                    "a_en": "Satoshi Nakamoto"
+                        },
+                        {
+                                    "category": "终极混战 (Mixed Ultimate)",
+                                    "q_cn": "著名的“曼哈顿计划”是为了研制什么？",
+                                    "q_en": "What was the famous 'Manhattan Project' designed to develop?",
+                                    "a_cn": "原子弹",
+                                    "a_en": "Atomic bomb"
+                        },
+                        {
+                                    "category": "终极混战 (Mixed Ultimate)",
+                                    "q_cn": "在古希腊神话中，美杜莎的头发是什么组成的？",
+                                    "q_en": "In Greek mythology, what was Medusa's hair made of?",
+                                    "a_cn": "蛇",
+                                    "a_en": "Snakes"
+                        },
+                        {
+                                    "category": "港剧经典 (TVB Memories)",
+                                    "q_cn": "2014 年大热剧《使徒行者》中，佘诗曼饰演的丁小嘉，外号被称为什么？",
+                                    "q_en": "In the 2014 hit drama 'Line Walker', what was the nickname of Ding Xiaojia (played by Charmaine Sheh)?",
+                                    "a_cn": "钉姐",
+                                    "a_en": "Ding Jie"
+                        },
+                        {
+                                    "category": "港剧经典 (TVB Memories)",
+                                    "q_cn": "《溏心风暴》系列中，李司棋饰演的“大契”最经典的台词是：“这里不是法庭，不需要证据，我的眼睛就是……”？",
+                                    "q_en": "In 'Heart of Greed', Louise Lee's character said: 'This is not a court, no evidence is needed. My eyes are the...'?",
+                                    "a_cn": "证据",
+                                    "a_en": "Evidence"
+                        },
+                        {
+                                    "category": "港剧经典 (TVB Memories)",
+                                    "q_cn": "在《寻秦记》中，古天乐饰演的项少龙是从现代穿越回到了哪个朝代？",
+                                    "q_en": "In 'A Step into the Past', Louis Koo's character travels back from modern times to which dynasty?",
+                                    "a_cn": "秦朝",
+                                    "a_en": "Qin Dynasty"
+                        },
+                        {
+                                    "category": "港剧经典 (TVB Memories)",
+                                    "q_cn": "黄子华在电视剧《栋笃神探》中饰演的高级督察角色名叫什么？",
+                                    "q_en": "What was the name of the Senior Inspector played by Dayo Wong in 'To Catch The Uncatchable'?",
+                                    "a_cn": "莫作栋",
+                                    "a_en": "Mok Jok-dung"
+                        },
+                        {
+                                    "category": "港剧经典 (TVB Memories)",
+                                    "q_cn": "在《法证先锋》第一、二部中，饰演法证部高级化验师“高彦博”的是哪位男演员？",
+                                    "q_en": "Who played the Senior Chemist 'Timothy Ko' in the first two seasons of 'Forensic Heroes'?",
+                                    "a_cn": "欧阳震华",
+                                    "a_en": "Bobby Au-yeung"
+                        },
+                        {
+                                    "category": "港剧经典 (TVB Memories)",
+                                    "q_cn": "张卫健版《西游记》中，孙悟空每次变身前都会说一段很长的口诀，开头是：“我是如来佛祖玉皇大帝观音菩萨指定取西经……”？",
+                                    "q_en": "In Dicky Cheung's version of 'Journey to the West', what is the title Sun Wukong uses in his long self-introduction?",
+                                    "a_cn": "特派使者",
+                                    "a_en": "Special Envoy"
+                        },
+                        {
+                                    "category": "港剧经典 (TVB Memories)",
+                                    "q_cn": "《冲上云霄》第一部中，代表唐亦晨（Sam Gor）与苏怡（Zoe）缘分的公仔叫什么？",
+                                    "q_en": "In the first 'Triumph in the Skies', what is the name of the doll that represents the fate between Sam Gor and Zoe?",
+                                    "a_cn": "Triangel (缘分天使)",
+                                    "a_en": "Triangel"
+                        },
+                        {
+                                    "category": "港剧经典 (TVB Memories)",
+                                    "q_cn": "《洗冤录》系列中，欧阳震华饰演的男主角是中国历史上哪位著名的法医学鼻祖？",
+                                    "q_en": "In 'Witness to a Prosecution', Bobby Au-yeung plays which famous historical figure known as the pioneer of forensics?",
+                                    "a_cn": "宋慈",
+                                    "a_en": "Song Ci"
+                        },
+                        {
+                                    "category": "港剧经典 (TVB Memories)",
+                                    "q_cn": "2014 年大热剧《使徒行者》中，佘诗曼饰演的丁小嘉，外号被称为什么？",
+                                    "q_en": "In the 2014 hit drama 'Line Walker', what was the nickname of Ding Xiaojia (played by Charmaine Sheh)?",
+                                    "a_cn": "钉姐",
+                                    "a_en": "Ding Jie"
+                        },
+                        {
+                                    "category": "港剧经典 (TVB Memories)",
+                                    "q_cn": "《溏心风暴》系列中，李司棋饰演的“大契”最经典的台词是：“这里不是法庭，不需要证据，我的眼睛就是……”？",
+                                    "q_en": "In 'Heart of Greed', Louise Lee's character said: 'This is not a court, no evidence is needed. My eyes are the...'?",
+                                    "a_cn": "证据",
+                                    "a_en": "Evidence"
+                        },
+                        {
+                                    "category": "港剧经典 (TVB Memories)",
+                                    "q_cn": "在《寻秦记》中，古天乐饰演的项少龙是从现代穿越回到了哪个朝代？",
+                                    "q_en": "In 'A Step into the Past', Louis Koo's character travels back from modern times to which dynasty?",
+                                    "a_cn": "秦朝",
+                                    "a_en": "Qin Dynasty"
+                        },
+                        {
+                                    "category": "港剧经典 (TVB Memories)",
+                                    "q_cn": "黄子华在电视剧《栋笃神探》中饰演的高级督察角色名叫什么？",
+                                    "q_en": "What was the name of the Senior Inspector played by Dayo Wong in 'To Catch The Uncatchable'?",
+                                    "a_cn": "莫作栋",
+                                    "a_en": "Mok Jok-dung"
+                        },
+                        {
+                                    "category": "港剧经典 (TVB Memories)",
+                                    "q_cn": "在《法证先锋》第一、二部中，饰演法证部高级化验师“高彦博”的是哪位男演员？",
+                                    "q_en": "Who played the Senior Chemist 'Timothy Ko' in the first two seasons of 'Forensic Heroes'?",
+                                    "a_cn": "欧阳震华",
+                                    "a_en": "Bobby Au-yeung"
+                        },
+                        {
+                                    "category": "港剧经典 (TVB Memories)",
+                                    "q_cn": "张卫健版《西游记》中，孙悟空每次变身前都会说一段很长的口诀，开头是：“我是如来佛祖玉皇大帝观音菩萨指定取西经……”？",
+                                    "q_en": "In Dicky Cheung's version of 'Journey to the West', what is the title Sun Wukong uses in his long self-introduction?",
+                                    "a_cn": "特派使者",
+                                    "a_en": "Special Envoy"
+                        },
+                        {
+                                    "category": "港剧经典 (TVB Memories)",
+                                    "q_cn": "《冲上云霄》第一部中，代表唐亦晨（Sam Gor）与苏怡（Zoe）缘分的公仔叫什么？",
+                                    "q_en": "In the first 'Triumph in the Skies', what is the name of the doll that represents the fate between Sam Gor and Zoe?",
+                                    "a_cn": "Triangel (缘分天使)",
+                                    "a_en": "Triangel"
+                        },
+                        {
+                                    "category": "港剧经典 (TVB Memories)",
+                                    "q_cn": "《洗冤录》系列中，欧阳震华饰演的男主角是中国历史上哪位著名的法医学鼻祖？",
+                                    "q_en": "In 'Witness to a Prosecution', Bobby Au-yeung plays which famous historical figure known as the pioneer of forensics?",
+                                    "a_cn": "宋慈",
+                                    "a_en": "Song Ci"
+                        }
             ]
-        };
+};
 
         function saveData() {
             try {
